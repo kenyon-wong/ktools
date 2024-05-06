@@ -1,30 +1,30 @@
 {
-	"version": "0.0.9",
-	"description": "pdtm is a simple and easy-to-use golang based tool for managing open source projects from ProjectDiscovery",
-	"homepage": "https://projectdiscovery.io",
-	"license": "MIT",
-	"architecture": {
-		"32bit": {
-			"url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_386.zip",
-			"hash": "0b26f7fe2f06208bb821663edd070ac6c9453baa88a7d09bb745cd3d41affa6c"
-		},
-		"64bit": {
-			"url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_amd64.zip",
-			"hash": "6634f584e6da990067ca1faa2840a1b6942a9ca81beaa7d460ba494c7f86555e"
-		}
-	},
-	"bin": "pdtm.exe",
-	"checkver": {
-		"github": "https://github.com/projectdiscovery/pdtm"
-	},
-	"autoupdate": {
-		"architecture": {
-			"32bit": {
-				"url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_386.zip"
-			},
-			"64bit": {
-				"url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_amd64.zip"
-			}
-		}
-	}
+    "version": "0.0.9",
+    "description": "pdtm is a simple and easy-to-use golang based tool for managing open source projects from ProjectDiscovery",
+    "homepage": "https://projectdiscovery.io",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_386.zip",
+            "hash": "0b26f7fe2f06208bb821663edd070ac6c9453baa88a7d09bb745cd3d41affa6c"
+        },
+        "64bit": {
+            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_amd64.zip",
+            "hash": "6634f584e6da990067ca1faa2840a1b6942a9ca81beaa7d460ba494c7f86555e"
+        }
+    },
+    "bin": "pdtm.exe",
+    "checkver": {
+        "github": "https://github.com/projectdiscovery/pdtm"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_386.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_amd64.zip"
+            }
+        }
+    }
 }

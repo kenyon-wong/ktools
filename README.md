@@ -11,12 +11,12 @@ ktools 是一个 scoop 的 bucket 扩展库，主要 Fork 自以下项目，按�
 
 ```powershell
 scoop bucket add ktools https://github.com/kenyon-wong/ktools
-scoop update 
+scoop update
 ```
 
 ## 软件自动更新
 
-> 来自 ViCrack 的 scoop-bucket 
+> 来自 ViCrack 的 scoop-bucket
 
 这个仓库已经添加 github ci 自动化，每隔几个小时会自动更新所有软件到最新版本
 
@@ -37,7 +37,7 @@ scoop update vi/screentogif
 
 ## 引用
 
-> 来自 ViCrack 的 scoop-bucket 
+> 来自 ViCrack 的 scoop-bucket
 
 加了一些我平常可能会用到的一些程序，大部分 json 是我自己写的，还有一部分参考或者定制化改写了以下仓库，表示感谢
 
