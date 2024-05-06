@@ -1,0 +1,24 @@
+{
+    "version": "1.0.1",
+    "description": "PDF 补丁丁 ——PDF 工具箱，可以编辑书签、剪裁旋转页面、解除限制、提取或合并文档，探查文档结构，提取图片、转成图片等等 ",
+    "homepage": "https://www.cnblogs.com/pdfpatcher",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/wmjordan/PDFPatcher?tab=readme-ov-file#%E6%8E%88%E6%9D%83%E5%8D%8F%E8%AE%AE"
+    },
+    "suggest": {
+        ".NET Desktop Runtime": "main/dotnet-sdk"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wmjordan/PDFPatcher/releases/download/v1.0.1/PDFPatcher.1.0.1.4220.7z",
+            "hash": "0f78af803c80de8de28c3520ab533f8ff9fa5f8cf294bc936441b106cbc41b24"
+        }
+    },
+    "shortcuts": [
+        [
+            "PDFPatcher.exe",
+            "PDFPatcher"
+        ]
+    ]
+}
