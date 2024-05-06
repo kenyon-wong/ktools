@@ -1,42 +1,48 @@
-# Scoop Bucket Template
+# ktools
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+## 项目说明
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+ktools 是一个 scoop 的 bucket 扩展库，主要 Fork 自以下项目，按照个人习惯对部分软件包进行了适当增删
 
-## How do I use this template?
+- https://github.com/ViCrack/scoop-bucket.git
+- https://github.com/arch3rPro/PST-Bucket.git
 
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Allow writing to the repository from within GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Select `Read and write permissions`.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
+## 食用指南
 
-## How do I install these manifests?
-
-After manifests have been committed and pushed, run the following:
-
-```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+```powershell
+scoop bucket add ktools https://github.com/kenyon-wong/ktools
+scoop update 
 ```
 
-## How do I contribute new manifests?
+## 软件自动更新
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+> 来自 ViCrack 的 scoop-bucket 
+
+这个仓库已经添加 github ci 自动化，每隔几个小时会自动更新所有软件到最新版本
+
+使用者可以自行在系统中加个定时任务，这样就能自动更新 scoop 软件了，当然也可以手工更新
+
+```powershell
+scoop update *
+```
+
+单个软件的更新可以使用下列命令，大多数情况下软件名不重复的话，可以省略 `vi/`，只需要执行类似 `scoop update xray` 的命令
+
+```powershell
+scoop update vi/xray
+scoop update vi/windterm
+scoop update vi/screentogif
+.......
+```
+
+## 引用
+
+> 来自 ViCrack 的 scoop-bucket 
+
+加了一些我平常可能会用到的一些程序，大部分 json 是我自己写的，还有一部分参考或者定制化改写了以下仓库，表示感谢
+
+-   [ScoopInstaller/Main: 📦 The default bucket for Scoop](https://github.com/ScoopInstaller/Main)
+-   [ScoopInstaller/Extras: 📦 The Extras bucket for Scoop](https://github.com/ScoopInstaller/Extras)
+-   [chawyehsu/dorado: 🐟 Yet Another bucket for lovely Scoop](https://github.com/chawyehsu/dorado)
+-   [kkzzhizhou/scoop-apps 📦](https://github.com/kkzzhizhou/scoop-apps)
+
