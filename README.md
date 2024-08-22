@@ -1,5 +1,17 @@
 # ktools
 
+<p align="center">
+  <img      src="https://img.shields.io/github/stars/kenyon-wong/ktools"/>  
+  <img      src="https://img.shields.io/github/forks/kenyon-wong/ktools"/> 
+  <img      src="https://img.shields.io/github/issues/kenyon-wong/ktools"/> 
+<!--   <img      src="https://img.shields.io/github/license/kenyon-wong/ktools"/>  -->
+</p>
+<p align="center">
+<img      src="https://img.shields.io/github/commit-activity/m/kenyon-wong/ktools"/>
+<img      src="https://img.shields.io/github/last-commit/kenyon-wong/ktools"/>
+<img      src="https://img.shields.io/github/repo-size/kenyon-wong/ktools"/>
+</p>
+
 ## 项目说明
 
 ktools 是一个 scoop 的 bucket 扩展库，主要 Fork 自以下项目，按照个人习惯对部分软件包进行了适当增删
