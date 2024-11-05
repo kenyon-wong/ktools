@@ -1,8 +1,14 @@
 {
     "version": "1.8.22.0",
-    "description": "功能强大使用简单的截图/贴图工具，帮助你提高效率",
+    "description": "PixPin - 功能强大的截图、贴图和图片管理工具",
     "homepage": "https://pixpinapp.com/",
     "license": "Freeware",
+    "notes": [
+        "快捷键:",
+        "- Win+Shift+P: 截图",
+        "- Win+Shift+O: 贴图",
+        "- Win+Shift+H: 历史记录"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://download.pixpinapp.com/PixPin_1.8.22.0.exe",
@@ -14,17 +20,33 @@
     "shortcuts": [
         [
             "PixPin.exe",
-            "PixPin"
+            "PixPin",
+            "",
+            "PixPin.exe"
         ]
     ],
-    "post_install": "if (!(Test-Path \"$dir\\Config\\config.json\")) { Set-Content -Encoding ASCII -Path \"$dir\\Config\\config.json\" -Value '{\"System.Update.AutoCheckUpdate\":{\"subConf\":{\"checkBeta\":false},\"value\":false}}' }",
+    "post_install": [
+        "if (!(Test-Path \"$dir\\Config\")) { New-Item \"$dir\\Config\" -Type Directory | Out-Null }",
+        "if (!(Test-Path \"$dir\\Config\\config.json\")) {",
+        "    $config = @{",
+        "        'System.Update.AutoCheckUpdate' = @{",
+        "            'subConf' = @{",
+        "                'checkBeta' = $false",
+        "            }",
+        "            'value' = $false",
+        "        }",
+        "    }",
+        "    $config | ConvertTo-Json -Depth 10 | Set-Content -Path \"$dir\\Config\\config.json\" -Encoding UTF8",
+        "}"
+    ],
     "persist": [
         "History",
-        "Data",
+        "Data", 
         "Config"
     ],
     "checkver": {
-        "regex": "PixPin_([\\d.]+).exe"
+        "url": "https://pixpinapp.com/",
+        "regex": "PixPin_([\\d.]+)\\.exe"
     },
     "autoupdate": {
         "architecture": {

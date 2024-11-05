@@ -1,21 +1,56 @@
 {
-    "version": "0.0.5",
-    "description": "netspy 是一款快速探测内网可达网段工具（深信服深蓝实验室天威战队强力驱动）",
-    "homepage": "https://github.com/shmilylty/netspy",
-    "license": "unkown",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/shmilylty/netspy/releases/download/v0.0.5/netspy_windows_amd64.zip",
-            "hash": "a16d21ff466823cf66ac851e79fa35f43d83533415a3e106d5d189369a28058a"
-        }
-    },
-    "bin": "netspy.exe",
-    "checkver": "github",
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/shmilylty/netspy/releases/download/v$version/netspy_windows_amd64.zip"
-            }
-        }
-    }
+	"version": "0.0.5",
+	"description": "NetSpy - 快速探测内网可达网段的扫描工具",
+	"homepage": "https://github.com/shmilylty/netspy",
+	"license": "Unknown",
+	"notes": [
+		"NetSpy 主要功能：",
+		"- 快速探测内网网段",
+		"- 支持多种探测方式",
+		"- 自动识别存活主机",
+		"- 支持多线程扫描",
+		"",
+		"基础用法：",
+		"netspy run",
+		"netspy run -t 192.168.1.0/24",
+		"netspy run -t 192.168.1.0/24 -o result.txt",
+		"",
+		"高级用法：",
+		"netspy run -t 192.168.1.0/24 --thread 100",
+		"netspy run -t 192.168.1.0/24 --timeout 3",
+		"",
+		"文档：https://github.com/shmilylty/netspy#readme",
+		"",
+		"安全提示：",
+		"1. 仅限授权环境使用",
+		"2. 建议在测试环境进行测试",
+		"3. 使用者需承担相关法律责任"
+	],
+	"architecture": {
+		"64bit": {
+			"url": "https://github.com/shmilylty/netspy/releases/download/v0.0.5/netspy_windows_amd64.zip",
+			"hash": "a16d21ff466823cf66ac851e79fa35f43d83533415a3e106d5d189369a28058a"
+		}
+	},
+	"pre_install": [
+		"if (!(Test-Path \"$persist_dir\\config\")) {",
+		"    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+		"}",
+		"if (!(Test-Path \"$persist_dir\\results\")) {",
+		"    New-Item -Path \"$persist_dir\\results\" -ItemType Directory | Out-Null",
+		"}"
+	],
+	"bin": "netspy.exe",
+	"persist": ["config", "results"],
+	"checkver": {
+		"github": "https://github.com/shmilylty/netspy",
+		"regex": "releases/tag/v([\\d.]+)"
+	},
+	"autoupdate": {
+		"architecture": {
+			"64bit": {
+				"url": "https://github.com/shmilylty/netspy/releases/download/v$version/netspy_windows_amd64.zip"
+			}
+		}
+	}
 }

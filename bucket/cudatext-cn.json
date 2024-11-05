@@ -1,56 +1,58 @@
 {
-    "version": "1.219.0.1",
-    "description": "Cross-platform text and code editor",
-    "homepage": "https://sourceforge.net/projects/cudatext",
-    "license": "Mozilla Public License 2.0 (MPL 2.0)",
-    "architecture": {
-        "64bit": {
-            "url": [
-                "https://udomain.dl.sourceforge.net/project/cudatext/release/1.219.0.1/cudatext-windows-amd64-1.219.0.1.zip",
-                "https://downloads.sourceforge.net/project/cudatext/addons/translations/translation.zh_CN.zip"
-            ],
-            "hash": [
-                "sha1:2eeaff82151cde800683ebc80dd2c2d67f22cb61",
-                "b2a78ad04ae5b6e762be51399c53e89ab88efe8021e98b774e66c7227152630a"
-            ]
-        }
-    },
-    "post_install": [
-        "Move-Item \"$dir\\install.inf\" \"$persist_dir\\data\\lang\\install.inf\" -Force",
-        "Move-Item \"$dir\\zh_CN.ini\" \"$persist_dir\\data\\lang\\zh_CN.ini\" -Force",
-        "if (Test-Path \"$dir\\py.original\") { Copy-Item \"$dir\\py.original\\*\" \"$dir\\py\" -Force -Recurse}"
-    ],
-    "bin": [
-        "cudatext.exe",
-        [
-            "install_shell64.cmd",
-            "cudatext_install_shell"
-        ],
-        [
-            "uninstall_shell64.cmd",
-            "cudatext_uninstall_shell"
-        ]
-    ],
-    "shortcuts": [
-        [
-            "cudatext.exe",
-            "CudaText"
-        ]
-    ],
-    "persist": [
-        "settings",
-        "data",
-        "py"
-    ],
-    "checkver": {
-        "url": "https://sourceforge.net/projects/cudatext/rss?path=/",
-        "regex": "/cudatext-windows-amd64-([\\d.]+)\\.zip"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://udomain.dl.sourceforge.net/project/cudatext/release/$version/cudatext-windows-amd64-$version.zip"
-            }
-        }
-    }
+	"version": "1.219.0.1",
+	"description": "CudaText - 一款功能强大的跨平台文本和代码编辑器",
+	"homepage": "https://sourceforge.net/projects/cudatext",
+	"license": "MPL-2.0",
+	"notes": [
+		"CudaText 特点：",
+		"- 支持多种编程语言的语法高亮",
+		"- 内置中文界面",
+		"- 支持插件扩展",
+		"- 轻量级且高性能",
+		"文档：https://wiki.freepascal.org/CudaText"
+	],
+	"architecture": {
+		"64bit": {
+			"url": [
+				"https://udomain.dl.sourceforge.net/project/cudatext/release/1.219.0.1/cudatext-windows-amd64-1.219.0.1.zip",
+				"https://downloads.sourceforge.net/project/cudatext/addons/translations/translation.zh_CN.zip"
+			],
+			"hash": [
+				"sha1:2eeaff82151cde800683ebc80dd2c2d67f22cb61",
+				"b2a78ad04ae5b6e762be51399c53e89ab88efe8021e98b774e66c7227152630a"
+			]
+		}
+	},
+	"pre_install": [
+		"if (!(Test-Path \"$persist_dir\\data\\lang\")) {",
+		"    New-Item -Path \"$persist_dir\\data\\lang\" -ItemType Directory -Force | Out-Null",
+		"}"
+	],
+	"post_install": [
+		"Write-Host '正在配置中文界面...' -ForegroundColor Yellow",
+		"Move-Item \"$dir\\install.inf\" \"$persist_dir\\data\\lang\\install.inf\" -Force",
+		"Move-Item \"$dir\\zh_CN.ini\" \"$persist_dir\\data\\lang\\zh_CN.ini\" -Force",
+		"if (Test-Path \"$dir\\py.original\") {",
+		"    Write-Host '正在配置 Python 插件...' -ForegroundColor Yellow",
+		"    Copy-Item \"$dir\\py.original\\*\" \"$dir\\py\" -Force -Recurse",
+		"}"
+	],
+	"bin": [
+		"cudatext.exe",
+		["install_shell64.cmd", "cudatext_install_shell"],
+		["uninstall_shell64.cmd", "cudatext_uninstall_shell"]
+	],
+	"shortcuts": [["cudatext.exe", "CudaText", "", "跨平台文本编辑器"]],
+	"persist": ["settings", "data", "py"],
+	"checkver": {
+		"url": "https://sourceforge.net/projects/cudatext/rss?path=/",
+		"regex": "/cudatext-windows-amd64-([\\d.]+)\\.zip"
+	},
+	"autoupdate": {
+		"architecture": {
+			"64bit": {
+				"url": "https://udomain.dl.sourceforge.net/project/cudatext/release/$version/cudatext-windows-amd64-$version.zip"
+			}
+		}
+	}
 }

@@ -1,30 +1,41 @@
 {
-    "version": "1.8.4",
-    "description": "一款内网综合扫描工具，方便一键自动化、全方位漏扫扫描。",
-    "homepage": "https://github.com/shadow1ng/fscan",
-    "license": "MIT",
-    "architecture": {
-        "32bit": {
-            "url": "https://github.com/shadow1ng/fscan/releases/download/1.8.4/fscan32.exe",
-            "hash": "612d940023d8530377f0571cb839d667e172dcbe307878ffd31b20f534c1169d"
-        },
-        "64bit": {
-            "url": "https://github.com/shadow1ng/fscan/releases/download/1.8.4/fscan.exe",
-            "hash": "7b9efc7ef8957411cdd22582ce4bfb3a5f76d9c91cdb7e36bf85c9785a2480e9"
-        }
-    },
-    "bin": "fscan.exe",
-    "checkver": {
-        "github": "https://github.com/shadow1ng/fscan"
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://github.com/shadow1ng/fscan/releases/download/$version/fscan32.exe"
-            },
-            "64bit": {
-                "url": "https://github.com/shadow1ng/fscan/releases/download/$version/fscan.exe"
-            }
-        }
-    }
+	"version": "1.8.4",
+	"description": "FScan - 一款功能强大的内网综合扫描工具",
+	"homepage": "https://github.com/shadow1ng/fscan",
+	"license": "MIT",
+	"notes": [
+		"FScan 是一款内网综合扫描工具，支持以下功能：",
+		"- 端口扫描、服务识别、常见漏洞探测",
+		"- 爆破与未授权检测",
+		"- 系统信息收集",
+		"使用文档：https://github.com/shadow1ng/fscan/blob/master/README.md"
+	],
+	"architecture": {
+		"32bit": {
+			"url": "https://github.com/shadow1ng/fscan/releases/download/1.8.4/fscan32.exe",
+			"hash": "612d940023d8530377f0571cb839d667e172dcbe307878ffd31b20f534c1169d",
+			"pre_install": "Rename-Item \"$dir\\fscan32.exe\" \"fscan.exe\""
+		},
+		"64bit": {
+			"url": "https://github.com/shadow1ng/fscan/releases/download/1.8.4/fscan.exe",
+			"hash": "7b9efc7ef8957411cdd22582ce4bfb3a5f76d9c91cdb7e36bf85c9785a2480e9"
+		}
+	},
+	"bin": "fscan.exe",
+	"persist": "config",
+	"shortcuts": [["fscan.exe", "FScan", "", "FScan 内网扫描工具"]],
+	"checkver": {
+		"github": "https://github.com/shadow1ng/fscan",
+		"regex": "releases/tag/([\\d.]+)"
+	},
+	"autoupdate": {
+		"architecture": {
+			"32bit": {
+				"url": "https://github.com/shadow1ng/fscan/releases/download/$version/fscan32.exe"
+			},
+			"64bit": {
+				"url": "https://github.com/shadow1ng/fscan/releases/download/$version/fscan.exe"
+			}
+		}
+	}
 }

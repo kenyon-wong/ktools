@@ -1,9 +1,25 @@
 {
     "version": "1.5.42",
-    "description": "Adversary Emulation Framework",
+    "description": "Sliver - 现代化的跨平台对抗模拟与红队C2框架",
     "homepage": "https://github.com/BishopFox/sliver",
     "license": "GPL-3.0-or-later",
-    "notes": "https://github.com/ViCrack/scoop-bucket/blob/master/bucket/sliver.json",
+    "notes": [
+        "Basic Usage:",
+        "1. Start the server:",
+        "   sliver-server",
+        "",
+        "2. Connect with the client:",
+        "   sliver-client",
+        "",
+        "Common commands in client:",
+        "- help           # Show help menu",
+        "- implants      # List all implants",
+        "- sessions      # List all active sessions",
+        "- generate      # Generate new implant",
+        "- use           # Select active session",
+        "",
+        "For detailed documentation, visit: https://github.com/BishopFox/sliver/wiki"
+    ],
     "architecture": {
         "64bit": {
             "url": [
@@ -26,7 +42,10 @@
             "sliver-server"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/BishopFox/sliver",
+        "regex": "v([\\d.]+)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
@@ -35,6 +54,9 @@
                     "https://github.com/BishopFox/sliver/releases/download/v$version/sliver-server_windows.exe"
                 ]
             }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
         }
     }
 }
