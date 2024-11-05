@@ -27,18 +27,15 @@
     "hash": "0ef17f6d33b0b35a9a1d501eb925d7a345c90b3796d79e5c7d9108f13a4c16d7",
     "extract_dir": "BlueTeamTools0.92",
     "pre_install": [
-        "$bat = @(@)",
-        "$bat += '@echo off'",
-        "$bat += 'start javaw.exe -jar \"%~dp0\\BlueTeamTools$version.jar\" %*'",
-        "Set-Content \"$dir\\blueteamtools.bat\" ($bat -join \"`r`n\") -Encoding Ascii"
+        "$batContent = '@echo off'",
+        "$batContent += \"`r`nstart javaw.exe -jar `\"%~dp0\\BlueTeamTools$version.jar`\" %*\"",
+        "Set-Content \"$dir\\blueteamtools.bat\" $batContent -Encoding ASCII"
     ],
     "bin": "blueteamtools.bat",
     "shortcuts": [
         [
             "blueteamtools.bat",
-            "BlueTeamTools",
-            "",
-            "BlueTeamTools$version.jar"
+            "BlueTeamTools"
         ]
     ],
     "checkver": {

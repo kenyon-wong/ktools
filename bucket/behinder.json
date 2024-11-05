@@ -12,13 +12,13 @@
     },
     "url": "https://github.com/rebeyond/Behinder/releases/download/Behinder_v4.0.7/Behinder_v4.07.zip",
     "hash": "d17c676a9525e99917a694024212bfddeb038d278f9017a0aef43fbdd142070b",
-    "extract_dir": "Behinder_v4.07",
     "pre_install": [
         "if (!(Test-Path \"$dir\\data.db\")) { New-Item \"$dir\\data.db\" -Type File | Out-Null }",
-        "$bat = @(@)",
-        "$bat += '@echo off'",
-        "$bat += 'start javaw.exe -jar \"%~dp0\\Behinder.jar\" %*'",
-        "Set-Content \"$dir\\behinder.bat\" ($bat -join \"`r`n\") -Encoding Ascii"
+        "$content = @(",
+        "    '@echo off'",
+        "    'start javaw.exe -jar \"%~dp0\\Behinder.jar\" %*'",
+        ")",
+        "$content | Set-Content \"$dir\\behinder.bat\" -Encoding ASCII"
     ],
     "bin": "behinder.bat",
     "shortcuts": [
@@ -35,7 +35,6 @@
         "regex": "Behinder_v([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/rebeyond/Behinder/releases/download/Behinder_v$version/Behinder_v$version.zip",
-        "extract_dir": "Behinder_v$cleanVersion"
+        "url": "https://github.com/rebeyond/Behinder/releases/download/Behinder_v$version/Behinder_v$matchHead.zip"
     }
 }

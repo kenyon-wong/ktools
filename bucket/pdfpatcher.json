@@ -1,5 +1,5 @@
 {
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"description": "PDF补丁丁 - 功能强大的 PDF 工具箱",
 	"homepage": "https://github.com/wmjordan/PDFPatcher",
 	"license": {
@@ -30,8 +30,8 @@
 	},
 	"architecture": {
 		"64bit": {
-			"url": "https://github.com/wmjordan/PDFPatcher/releases/download/v1.0.1/PDFPatcher.1.0.1.4220.7z",
-			"hash": "0f78af803c80de8de28c3520ab533f8ff9fa5f8cf294bc936441b106cbc41b24"
+			"url": "https://github.com/wmjordan/PDFPatcher/releases/download/v1.0.4/PDFPatcher.1.0.4.4514.7z",
+			"hash": "01F6F03CB37FE1FE50BE4064F1E941C4B733EA153F7BC53EDB225FE7F96557F1"
 		}
 	},
 	"pre_install": [
@@ -39,7 +39,7 @@
 		"    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
 		"}"
 	],
-	"shortcuts": [["PDFPatcher.exe", "PDF补丁丁", "", "PDF工具箱"]],
+	"shortcuts": [["PDFPatcher.exe", "PDF补丁丁", ""]],
 	"persist": ["config", "书签范本"],
 	"checkver": {
 		"github": "https://github.com/wmjordan/PDFPatcher",
