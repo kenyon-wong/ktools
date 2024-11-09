@@ -1,38 +1,38 @@
 {
-	"version": "1.2.0",
-	"description": "The most powerful bruteforcer / password sprayer Artifact ",
-	"homepage": "https://github.com/chainreactors/zombie",
-	"license": "MIT",
-	"architecture": {
-		"32bit": {
-			"url": "https://github.com/chainreactors/zombie/releases/download/v1.2.0/zombie_windows_386.exe#/zombie.exe",
-			"hash": "646E3414BB0901FACB8635C700EEE4BFCF2B35FDC9C34551543613FEB8C2F22B"
-		},
-		"64bit": {
-			"url": "https://github.com/chainreactors/zombie/releases/download/v1.2.0/zombie_windows_amd64.exe#/zombie.exe",
-			"hash": "03D13AFAD0CDB926670654AA2DABCE79040D498FCF33D685C6F2CA8983326C2A"
-		}
-	},
-	"bin": "zombie.exe",
-	"checkver": {
-		"github": "https://github.com/chainreactors/zombie"
-	},
-	"autoupdate": {
-		"architecture": {
-			"32bit": {
-				"url": "https://github.com/chainreactors/zombie/releases/download/v$version/zombie_windows_386.exe#/zombie.exe",
-				"hash": {
-					"url": "$baseurl/checksums.txt",
-					"regex": "$sha256.*?zombie_windows_386.exe"
-				}
-			},
-			"64bit": {
-				"url": "https://github.com/chainreactors/zombie/releases/download/v$version/zombie_windows_amd64.exe#/zombie.exe",
-				"hash": {
-					"url": "$baseurl/checksums.txt",
-					"regex": "$sha256.*?zombie_windows_amd64.exe"
-				}
-			}
-		}
-	}
+    "version": "1.2.1",
+    "description": "The most powerful bruteforcer / password sprayer Artifact ",
+    "homepage": "https://github.com/chainreactors/zombie",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/chainreactors/zombie/releases/download/v1.2.1/zombie_windows_386.exe#/zombie.exe",
+            "hash": "3c9b7a79b947b55355f10b70da67ad94f7c172e15bbf726bba6fdfb2ded84fd7"
+        },
+        "64bit": {
+            "url": "https://github.com/chainreactors/zombie/releases/download/v1.2.1/zombie_windows_amd64.exe#/zombie.exe",
+            "hash": "15dfd647f580383d4acc139572ce40b4d4c7f6dd4501720df6d88eaeea082e6f"
+        }
+    },
+    "bin": "zombie.exe",
+    "checkver": {
+        "github": "https://github.com/chainreactors/zombie"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/chainreactors/zombie/releases/download/v$version/zombie_windows_386.exe#/zombie.exe",
+                "hash": {
+                    "url": "$baseurl/checksums.txt",
+                    "regex": "$sha256.*?zombie_windows_386.exe"
+                }
+            },
+            "64bit": {
+                "url": "https://github.com/chainreactors/zombie/releases/download/v$version/zombie_windows_amd64.exe#/zombie.exe",
+                "hash": {
+                    "url": "$baseurl/checksums.txt",
+                    "regex": "$sha256.*?zombie_windows_amd64.exe"
+                }
+            }
+        }
+    }
 }
