@@ -1,39 +1,39 @@
 {
-	"version": "2.13.4",
-	"description": "A highly controllable and extensible automated engine for red teams",
-	"homepage": "https://github.com/chainreactors/gogo",
-	"license": "GPL-3.0-only",
-	"notes": "gogo is a security tool, use with caution!",
-	"architecture": {
-		"32bit": {
-			"url": "https://github.com/chainreactors/gogo/releases/download/v2.13.4/gogo_windows_386.exe#/gogo.exe",
-			"hash": "B49D950426316009885F22188CB7FBB1671AC0352807DB9FD828F2B5856E9302"
-		},
-		"64bit": {
-			"url": "https://github.com/chainreactors/gogo/releases/download/v2.13.4/gogo_windows_amd64.exe#/gogo.exe",
-			"hash": "8A87179B30C319B71F34B064260A6D2B4642E82F6D4FC47F7B9CD332FDA9EE6B"
-		}
-	},
-	"bin": "gogo.exe",
-	"checkver": {
-		"github": "https://github.com/chainreactors/gogo"
-	},
-	"autoupdate": {
-		"architecture": {
-			"32bit": {
-				"url": "https://github.com/chainreactors/gogo/releases/download/v$version/gogo_windows_386.exe#/gogo.exe",
-				"hash": {
-					"url": "$baseurl/checksums.txt",
-					"regex": "$sha256.*?gogo_windows_386.exe"
-				}
-			},
-			"64bit": {
-				"url": "https://github.com/chainreactors/gogo/releases/download/v$version/gogo_windows_amd64.exe#/gogo.exe",
-				"hash": {
-					"url": "$baseurl/checksums.txt",
-					"regex": "$sha256.*?gogo_windows_amd64.exe"
-				}
-			}
-		}
-	}
+    "version": "2.13.5",
+    "description": "A highly controllable and extensible automated engine for red teams",
+    "homepage": "https://github.com/chainreactors/gogo",
+    "license": "GPL-3.0-only",
+    "notes": "gogo is a security tool, use with caution!",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/chainreactors/gogo/releases/download/v2.13.5/gogo_windows_386.exe#/gogo.exe",
+            "hash": "a1b041b47152565fb842c82414133c7fc9fb39b3e2fc2bbdbfc4fbdc9aced84c"
+        },
+        "64bit": {
+            "url": "https://github.com/chainreactors/gogo/releases/download/v2.13.5/gogo_windows_amd64.exe#/gogo.exe",
+            "hash": "325df1804946a7f04b4f12b77e22ac8574827410222766ee76c2b5d2ad799996"
+        }
+    },
+    "bin": "gogo.exe",
+    "checkver": {
+        "github": "https://github.com/chainreactors/gogo"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/chainreactors/gogo/releases/download/v$version/gogo_windows_386.exe#/gogo.exe",
+                "hash": {
+                    "url": "$baseurl/checksums.txt",
+                    "regex": "$sha256.*?gogo_windows_386.exe"
+                }
+            },
+            "64bit": {
+                "url": "https://github.com/chainreactors/gogo/releases/download/v$version/gogo_windows_amd64.exe#/gogo.exe",
+                "hash": {
+                    "url": "$baseurl/checksums.txt",
+                    "regex": "$sha256.*?gogo_windows_amd64.exe"
+                }
+            }
+        }
+    }
 }
