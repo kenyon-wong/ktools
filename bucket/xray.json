@@ -1,69 +1,69 @@
-{
-    "version": "1.9.11",
-    "description": "XRAY - 长亭科技开发的Web安全评估工具，支持漏洞扫描和POC验证",
-    "homepage": "https://github.com/chaitin/xray",
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://github.com/chaitin/xray/blob/master/Disclaimer.md"
-    },
-    "notes": [
-        "基本用法:",
-        "xray webscan --basic-crawler http://example.com    # 基础爬虫模式",
-        "xray webscan --url http://example.com             # 扫描单个URL",
-        "xray webscan --url-file urls.txt                  # 批量扫描",
-        "",
-        "代理模式:",
-        "xray webscan --listen 127.0.0.1:7777             # 启动代理扫描",
-        "",
-        "POC模式:",
-        "xray poc --target http://example.com              # 对单个目标执行POC",
-        "xray poc --target-file targets.txt                # 对多个目标执行POC",
-        "",
-        "更多选项:",
-        "--html-output   生成HTML报告",
-        "--json-output   生成JSON报告",
-        "--webhook-output 将结果推送到Webhook",
-        "",
-        "注意: 首次运行会自动生成CA证书，用于HTTPS扫描",
-        "详细文档: https://docs.xray.cool/"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/chaitin/xray/releases/download/1.9.11/xray_windows_amd64.exe.zip",
-            "hash": "c43fa39b31d3cf4972859bbfb6af02cd08a8b40f981525da56a4bc4d27534b9f"
-        },
-        "32bit": {
-            "url": "https://github.com/chaitin/xray/releases/download/1.9.11/xray_windows_386.exe.zip",
-            "hash": "b2abf75877307d64d9d4ac2bf081ecb841fb44380e3dcd12c6334bc06eb979cd"
-        }
-    },
-    "pre_install": [
-        "Get-ChildItem \"$dir\\xray_windows_*.exe\" | Rename-Item -NewName 'xray.exe'",
-        "if (!(Test-Path \"$dir\\ca.crt\")) {",
-        "    Write-Host 'Generating CA certificate and key...' -ForegroundColor Yellow",
-        "    Start-Process -NoNewWindow -FilePath \"$dir\\xray.exe\" -WorkingDirectory \"$dir\" -ArgumentList 'genca' -Wait | Out-Null",
-        "}"
-    ],
-    "bin": "xray.exe",
-    "persist": [
-        "ca.crt",
-        "ca.key"
-    ],
-    "checkver": {
-        "github": "https://github.com/chaitin/xray",
-        "regex": "download/([\\d.]+)/"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/chaitin/xray/releases/download/$version/xray_windows_amd64.exe.zip"
-            },
-            "32bit": {
-                "url": "https://github.com/chaitin/xray/releases/download/$version/xray_windows_386.exe.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/checksums.txt"
-        }
-    }
-}
+{
+    "version": "1.9.11",
+    "description": "XRAY - 长亭科技开发的Web安全评估工具，支持漏洞扫描和POC验证",
+    "homepage": "https://github.com/chaitin/xray",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/chaitin/xray/blob/master/Disclaimer.md"
+    },
+    "notes": [
+        "基本用法:",
+        "xray webscan --basic-crawler http://example.com    # 基础爬虫模式",
+        "xray webscan --url http://example.com             # 扫描单个URL",
+        "xray webscan --url-file urls.txt                  # 批量扫描",
+        "",
+        "代理模式:",
+        "xray webscan --listen 127.0.0.1:7777             # 启动代理扫描",
+        "",
+        "POC模式:",
+        "xray poc --target http://example.com              # 对单个目标执行POC",
+        "xray poc --target-file targets.txt                # 对多个目标执行POC",
+        "",
+        "更多选项:",
+        "--html-output   生成HTML报告",
+        "--json-output   生成JSON报告",
+        "--webhook-output 将结果推送到Webhook",
+        "",
+        "注意: 首次运行会自动生成CA证书，用于HTTPS扫描",
+        "详细文档: https://docs.xray.cool/"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/chaitin/xray/releases/download/1.9.11/xray_windows_amd64.exe.zip",
+            "hash": "c43fa39b31d3cf4972859bbfb6af02cd08a8b40f981525da56a4bc4d27534b9f"
+        },
+        "32bit": {
+            "url": "https://github.com/chaitin/xray/releases/download/1.9.11/xray_windows_386.exe.zip",
+            "hash": "b2abf75877307d64d9d4ac2bf081ecb841fb44380e3dcd12c6334bc06eb979cd"
+        }
+    },
+    "pre_install": [
+        "Get-ChildItem \"$dir\\xray_windows_*.exe\" | Rename-Item -NewName 'xray.exe'",
+        "if (!(Test-Path \"$dir\\ca.crt\")) {",
+        "    Write-Host 'Generating CA certificate and key...' -ForegroundColor Yellow",
+        "    Start-Process -NoNewWindow -FilePath \"$dir\\xray.exe\" -WorkingDirectory \"$dir\" -ArgumentList 'genca' -Wait | Out-Null",
+        "}"
+    ],
+    "bin": "xray.exe",
+    "persist": [
+        "ca.crt",
+        "ca.key"
+    ],
+    "checkver": {
+        "github": "https://github.com/chaitin/xray",
+        "regex": "download/([\\d.]+)/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/chaitin/xray/releases/download/$version/xray_windows_amd64.exe.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/chaitin/xray/releases/download/$version/xray_windows_386.exe.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}

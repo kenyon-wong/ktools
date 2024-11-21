@@ -1,49 +1,49 @@
-{
-    "version": "0.92",
-    "description": "蓝队分析研判工具箱 - 内存马分析、代码格式化、网空测绘、溯源辅助等功能",
-    "homepage": "https://github.com/abc123info/BlueTeamTools",
-    "license": "Freeware",
-    "notes": [
-        "Java Runtime Environment (JRE) or Java Development Kit (JDK) is required to run this application.",
-        "Main features:",
-        "- 内存马反编译分析",
-        "- 代码格式化",
-        "- 网空资产测绘",
-        "- 溯源辅助",
-        "- 解密冰蝎/哥斯拉流量",
-        "- 解密Shiro/CAS/Log4j2攻击payload",
-        "- IP/端口连接分析",
-        "- 编码解码功能",
-        "- Java反序列化分析",
-        "- Fofa/Hunter搜索"
-    ],
-    "suggest": {
-        "JDK": [
-            "java/oraclejdk",
-            "java/openjdk"
-        ]
-    },
-    "url": "https://github.com/abc123info/BlueTeamTools/releases/download/v0.92/BlueTeamTools0.92.zip",
-    "hash": "0ef17f6d33b0b35a9a1d501eb925d7a345c90b3796d79e5c7d9108f13a4c16d7",
-    "extract_dir": "BlueTeamTools0.92",
-    "pre_install": [
-        "$batContent = '@echo off'",
-        "$batContent += \"`r`nstart javaw.exe -jar `\"%~dp0\\BlueTeamTools$version.jar`\" %*\"",
-        "Set-Content \"$dir\\blueteamtools.bat\" $batContent -Encoding ASCII"
-    ],
-    "bin": "blueteamtools.bat",
-    "shortcuts": [
-        [
-            "blueteamtools.bat",
-            "BlueTeamTools"
-        ]
-    ],
-    "checkver": {
-        "github": "https://github.com/abc123info/BlueTeamTools",
-        "regex": "v([\\d.]+)"
-    },
-    "autoupdate": {
-        "url": "https://github.com/abc123info/BlueTeamTools/releases/download/v$version/BlueTeamTools$version.zip",
-        "extract_dir": "BlueTeamTools$version"
-    }
-}
+{
+    "version": "0.92",
+    "description": "蓝队分析研判工具箱 - 内存马分析、代码格式化、网空测绘、溯源辅助等功能",
+    "homepage": "https://github.com/abc123info/BlueTeamTools",
+    "license": "Freeware",
+    "notes": [
+        "Java Runtime Environment (JRE) or Java Development Kit (JDK) is required to run this application.",
+        "Main features:",
+        "- 内存马反编译分析",
+        "- 代码格式化",
+        "- 网空资产测绘",
+        "- 溯源辅助",
+        "- 解密冰蝎/哥斯拉流量",
+        "- 解密Shiro/CAS/Log4j2攻击payload",
+        "- IP/端口连接分析",
+        "- 编码解码功能",
+        "- Java反序列化分析",
+        "- Fofa/Hunter搜索"
+    ],
+    "suggest": {
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ]
+    },
+    "url": "https://github.com/abc123info/BlueTeamTools/releases/download/v0.92/BlueTeamTools0.92.zip",
+    "hash": "0ef17f6d33b0b35a9a1d501eb925d7a345c90b3796d79e5c7d9108f13a4c16d7",
+    "extract_dir": "BlueTeamTools0.92",
+    "pre_install": [
+        "$batContent = '@echo off'",
+        "$batContent += \"`r`nstart javaw.exe -jar `\"%~dp0\\BlueTeamTools$version.jar`\" %*\"",
+        "Set-Content \"$dir\\blueteamtools.bat\" $batContent -Encoding ASCII"
+    ],
+    "bin": "blueteamtools.bat",
+    "shortcuts": [
+        [
+            "blueteamtools.bat",
+            "BlueTeamTools"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/abc123info/BlueTeamTools",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/abc123info/BlueTeamTools/releases/download/v$version/BlueTeamTools$version.zip",
+        "extract_dir": "BlueTeamTools$version"
+    }
+}

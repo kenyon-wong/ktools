@@ -1,34 +1,39 @@
-{
-    "version": "1.4.2",
-    "description": "Git-repo-clean - 用于扫描、清理 Git 仓库大文件并重写提交历史的工具",
-    "homepage": "https://gitee.com/oschina/git-repo-clean",
-    "license": "MulanPSL-2.0",
-    "notes": [
-        "使用说明请访问: https://gitee.com/oschina/git-repo-clean/blob/master/README.md",
-        "此工具需要 Git 环境支持，请确保已安装 Git"
-    ],
-    "suggest": {
-        "Git": "main/git"
-    },
-    "architecture": {
-        "64bit": {
-            "url": "https://gitee.com/oschina/git-repo-clean/releases/download/v1.4.2/git-repo-clean-1.4.2-Windows-64.zip",
-            "hash": "0cc0a624515e030f1741dc252e448a38089982c6eb473138c2167a7bf964d409"
-        }
-    },
-    "extract_dir": "releases/1.4.2/Windows-64",
-    "bin": "git-repo-clean.exe",
-    "shortcuts": [["git-repo-clean.exe", "Git Repo Clean"]],
-    "checkver": {
-        "url": "https://gitee.com/oschina/git-repo-clean/releases",
-        "regex": "/git-repo-clean-([\\d.]+)-Windows-64.zip"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://gitee.com/oschina/git-repo-clean/releases/download/v$version/git-repo-clean-$version-Windows-64.zip"
-            }
-        },
-        "extract_dir": "releases/$version/Windows-64"
-    }
-}
+{
+    "version": "1.4.2",
+    "description": "Git-repo-clean - 用于扫描、清理 Git 仓库大文件并重写提交历史的工具",
+    "homepage": "https://gitee.com/oschina/git-repo-clean",
+    "license": "MulanPSL-2.0",
+    "notes": [
+        "使用说明请访问: https://gitee.com/oschina/git-repo-clean/blob/master/README.md",
+        "此工具需要 Git 环境支持，请确保已安装 Git"
+    ],
+    "suggest": {
+        "Git": "main/git"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://gitee.com/oschina/git-repo-clean/releases/download/v1.4.2/git-repo-clean-1.4.2-Windows-64.zip",
+            "hash": "0cc0a624515e030f1741dc252e448a38089982c6eb473138c2167a7bf964d409"
+        }
+    },
+    "extract_dir": "releases/1.4.2/Windows-64",
+    "bin": "git-repo-clean.exe",
+    "shortcuts": [
+        [
+            "git-repo-clean.exe",
+            "Git Repo Clean"
+        ]
+    ],
+    "checkver": {
+        "url": "https://gitee.com/oschina/git-repo-clean/releases",
+        "regex": "/git-repo-clean-([\\d.]+)-Windows-64.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://gitee.com/oschina/git-repo-clean/releases/download/v$version/git-repo-clean-$version-Windows-64.zip"
+            }
+        },
+        "extract_dir": "releases/$version/Windows-64"
+    }
+}

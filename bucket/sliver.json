@@ -1,62 +1,62 @@
-{
-    "version": "1.5.42",
-    "description": "Sliver - 现代化的跨平台对抗模拟与红队C2框架",
-    "homepage": "https://github.com/BishopFox/sliver",
-    "license": "GPL-3.0-or-later",
-    "notes": [
-        "Basic Usage:",
-        "1. Start the server:",
-        "   sliver-server",
-        "",
-        "2. Connect with the client:",
-        "   sliver-client",
-        "",
-        "Common commands in client:",
-        "- help           # Show help menu",
-        "- implants      # List all implants",
-        "- sessions      # List all active sessions",
-        "- generate      # Generate new implant",
-        "- use           # Select active session",
-        "",
-        "For detailed documentation, visit: https://github.com/BishopFox/sliver/wiki"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": [
-                "https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-client_windows.exe",
-                "https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-server_windows.exe"
-            ],
-            "hash": [
-                "b7f9eb0a95f3523aee8363c59e26a88bcf30d2160db862d4d167945ad342d777",
-                "cb93e410d0d8660c4aef3b7f98c08408d3ca972b898705d681d9a569b61c703b"
-            ]
-        }
-    },
-    "bin": [
-        [
-            "sliver-client_windows.exe",
-            "sliver-client"
-        ],
-        [
-            "sliver-server_windows.exe",
-            "sliver-server"
-        ]
-    ],
-    "checkver": {
-        "github": "https://github.com/BishopFox/sliver",
-        "regex": "v([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": [
-                    "https://github.com/BishopFox/sliver/releases/download/v$version/sliver-client_windows.exe",
-                    "https://github.com/BishopFox/sliver/releases/download/v$version/sliver-server_windows.exe"
-                ]
-            }
-        },
-        "hash": {
-            "url": "$baseurl/checksums.txt"
-        }
-    }
-}
+{
+    "version": "1.5.42",
+    "description": "Sliver - 现代化的跨平台对抗模拟与红队C2框架",
+    "homepage": "https://github.com/BishopFox/sliver",
+    "license": "GPL-3.0-or-later",
+    "notes": [
+        "Basic Usage:",
+        "1. Start the server:",
+        "   sliver-server",
+        "",
+        "2. Connect with the client:",
+        "   sliver-client",
+        "",
+        "Common commands in client:",
+        "- help           # Show help menu",
+        "- implants      # List all implants",
+        "- sessions      # List all active sessions",
+        "- generate      # Generate new implant",
+        "- use           # Select active session",
+        "",
+        "For detailed documentation, visit: https://github.com/BishopFox/sliver/wiki"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-client_windows.exe",
+                "https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-server_windows.exe"
+            ],
+            "hash": [
+                "b7f9eb0a95f3523aee8363c59e26a88bcf30d2160db862d4d167945ad342d777",
+                "cb93e410d0d8660c4aef3b7f98c08408d3ca972b898705d681d9a569b61c703b"
+            ]
+        }
+    },
+    "bin": [
+        [
+            "sliver-client_windows.exe",
+            "sliver-client"
+        ],
+        [
+            "sliver-server_windows.exe",
+            "sliver-server"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/BishopFox/sliver",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": [
+                    "https://github.com/BishopFox/sliver/releases/download/v$version/sliver-client_windows.exe",
+                    "https://github.com/BishopFox/sliver/releases/download/v$version/sliver-server_windows.exe"
+                ]
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}

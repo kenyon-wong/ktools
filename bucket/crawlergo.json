@@ -1,41 +1,46 @@
-{
-	"version": "0.4.4",
-	"description": "CrawlerGo - 一款使用 Chrome Headless 模式进行URL收集的动态爬虫",
-	"homepage": "https://github.com/Qianlitp/crawlergo",
-	"license": "GPL-3.0-or-later",
-	"notes": [
-		"CrawlerGo 是专为漏洞扫描器定制的浏览器爬虫，具有以下特点：",
-		"- 基于 Chrome Headless 模式",
-		"- 支持 DOM 渲染和 JavaScript 解析",
-		"- 智能表单填充",
-		"- 自动处理 Single Page Application",
-		"使用文档：https://github.com/Qianlitp/crawlergo#readme"
-	],
-	"suggest": {
-		"Chrome": "googlechrome"
-	},
-	"architecture": {
-		"64bit": {
-			"url": "https://github.com/Qianlitp/crawlergo/releases/download/v0.4.4/crawlergo_win_amd64.exe",
-			"hash": "2f9d9abd2b3dae7c1a362736db7bf3b55f1d24b2af7a7a4a665108f8b1cbfd71"
-		}
-	},
-	"pre_install": [
-		"if (!(Test-Path \"$persist_dir\\config\")) {",
-		"    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
-		"}"
-	],
-	"bin": [["crawlergo_win_amd64.exe", "crawlergo"]],
-	"persist": "config",
-	"checkver": {
-		"github": "https://github.com/Qianlitp/crawlergo",
-		"regex": "releases/tag/v([\\d.]+)"
-	},
-	"autoupdate": {
-		"architecture": {
-			"64bit": {
-				"url": "https://github.com/Qianlitp/crawlergo/releases/download/v$version/crawlergo_win_amd64.exe"
-			}
-		}
-	}
-}
+{
+    "version": "0.4.4",
+    "description": "CrawlerGo - 一款使用 Chrome Headless 模式进行URL收集的动态爬虫",
+    "homepage": "https://github.com/Qianlitp/crawlergo",
+    "license": "GPL-3.0-or-later",
+    "notes": [
+        "CrawlerGo 是专为漏洞扫描器定制的浏览器爬虫，具有以下特点：",
+        "- 基于 Chrome Headless 模式",
+        "- 支持 DOM 渲染和 JavaScript 解析",
+        "- 智能表单填充",
+        "- 自动处理 Single Page Application",
+        "使用文档：https://github.com/Qianlitp/crawlergo#readme"
+    ],
+    "suggest": {
+        "Chrome": "googlechrome"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Qianlitp/crawlergo/releases/download/v0.4.4/crawlergo_win_amd64.exe",
+            "hash": "2f9d9abd2b3dae7c1a362736db7bf3b55f1d24b2af7a7a4a665108f8b1cbfd71"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "bin": [
+        [
+            "crawlergo_win_amd64.exe",
+            "crawlergo"
+        ]
+    ],
+    "persist": "config",
+    "checkver": {
+        "github": "https://github.com/Qianlitp/crawlergo",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Qianlitp/crawlergo/releases/download/v$version/crawlergo_win_amd64.exe"
+            }
+        }
+    }
+}

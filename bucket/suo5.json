@@ -1,50 +1,50 @@
-{
-    "version": "1.3.1",
-    "description": "Suo5 - 高性能HTTP代理隧道工具，支持多级代理转发、负载均衡、端口复用等功能",
-    "homepage": "https://github.com/zema1/suo5",
-    "license": "MIT",
-    "notes": [
-        "主要功能:",
-        "- 支持HTTP/SOCKS4/SOCKS5代理协议",
-        "- 支持多级代理转发",
-        "- 支持负载均衡",
-        "- 支持端口复用",
-        "- 支持TLS加密",
-        "- 支持自定义DNS解析",
-        "",
-        "图形界面使用说明:",
-        "1. 启动后在系统托盘找到Suo5图标",
-        "2. 右键点击图标可以配置代理设置",
-        "3. 支持导入/导出配置文件",
-        "",
-        "For more information, visit: https://github.com/zema1/suo5#readme"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/zema1/suo5/releases/download/v1.3.1/suo5-gui-windows.exe",
-            "hash": "7d13fc667b3b8cf67281cb08c7d75af99eb29f857c71170c6bfad1318708560a"
-        }
-    },
-    "shortcuts": [
-        [
-            "suo5-gui-windows.exe",
-            "Suo5",
-            "",
-            "suo5-gui-windows.exe"
-        ]
-    ],
-    "checkver": {
-        "github": "https://github.com/zema1/suo5",
-        "regex": "v([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/zema1/suo5/releases/download/v$version/suo5-gui-windows.exe"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/checksums.txt"
-        }
-    }
-}
+{
+    "version": "1.3.1",
+    "description": "Suo5 - 高性能HTTP代理隧道工具，支持多级代理转发、负载均衡、端口复用等功能",
+    "homepage": "https://github.com/zema1/suo5",
+    "license": "MIT",
+    "notes": [
+        "主要功能:",
+        "- 支持HTTP/SOCKS4/SOCKS5代理协议",
+        "- 支持多级代理转发",
+        "- 支持负载均衡",
+        "- 支持端口复用",
+        "- 支持TLS加密",
+        "- 支持自定义DNS解析",
+        "",
+        "图形界面使用说明:",
+        "1. 启动后在系统托盘找到Suo5图标",
+        "2. 右键点击图标可以配置代理设置",
+        "3. 支持导入/导出配置文件",
+        "",
+        "For more information, visit: https://github.com/zema1/suo5#readme"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/zema1/suo5/releases/download/v1.3.1/suo5-gui-windows.exe",
+            "hash": "7d13fc667b3b8cf67281cb08c7d75af99eb29f857c71170c6bfad1318708560a"
+        }
+    },
+    "shortcuts": [
+        [
+            "suo5-gui-windows.exe",
+            "Suo5",
+            "",
+            "suo5-gui-windows.exe"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/zema1/suo5",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/zema1/suo5/releases/download/v$version/suo5-gui-windows.exe"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}
