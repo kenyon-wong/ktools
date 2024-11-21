@@ -32,16 +32,7 @@
             ]
         }
     },
-    "bin": [
-        [
-            "sliver-client_windows.exe",
-            "sliver-client"
-        ],
-        [
-            "sliver-server_windows.exe",
-            "sliver-server"
-        ]
-    ],
+    "bin": [["sliver-client_windows.exe", "sliver-client"], ["sliver-server_windows.exe", "sliver-server"]],
     "checkver": {
         "github": "https://github.com/BishopFox/sliver",
         "regex": "v([\\d.]+)"

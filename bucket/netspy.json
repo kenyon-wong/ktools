@@ -41,10 +41,7 @@
         "}"
     ],
     "bin": "netspy.exe",
-    "persist": [
-        "config",
-        "results"
-    ],
+    "persist": ["config", "results"],
     "checkver": {
         "github": "https://github.com/shmilylty/netspy",
         "regex": "releases/tag/v([\\d.]+)"

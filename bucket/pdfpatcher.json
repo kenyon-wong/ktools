@@ -26,10 +26,7 @@
         "注意：首次运行可能需要安装 .NET Runtime"
     ],
     "suggest": {
-        ".NET Runtime": [
-            "main/dotnet-runtime",
-            "main/dotnet-sdk"
-        ]
+        ".NET Runtime": ["main/dotnet-runtime", "main/dotnet-sdk"]
     },
     "architecture": {
         "64bit": {
@@ -42,17 +39,8 @@
         "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
         "}"
     ],
-    "shortcuts": [
-        [
-            "PDFPatcher.exe",
-            "PDF补丁丁",
-            ""
-        ]
-    ],
-    "persist": [
-        "config",
-        "书签范本"
-    ],
+    "shortcuts": [["PDFPatcher.exe", "PDF补丁丁", ""]],
+    "persist": ["config", "书签范本"],
     "checkver": {
         "github": "https://github.com/wmjordan/PDFPatcher",
         "regex": "releases/tag/v([\\d.]+)"

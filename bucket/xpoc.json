@@ -31,12 +31,7 @@
             "hash": "06d06ffc1e46fbeff5f4053a04b1b16468d5808b81ecfcd98c15f7e767b32da6"
         }
     },
-    "bin": [
-        [
-            "xpoc_windows_amd64.exe",
-            "xpoc"
-        ]
-    ],
+    "bin": [["xpoc_windows_amd64.exe", "xpoc"]],
     "checkver": {
         "github": "https://github.com/chaitin/xpoc",
         "regex": "download/([\\d.]+)/"

@@ -23,13 +23,7 @@
     },
     "bin": "fscan.exe",
     "persist": "config",
-    "shortcuts": [
-        [
-            "fscan.exe",
-            "FScan",
-            ""
-        ]
-    ],
+    "shortcuts": [["fscan.exe", "FScan", ""]],
     "checkver": {
         "github": "https://github.com/shadow1ng/fscan",
         "regex": "releases/tag/([\\d.]+)"

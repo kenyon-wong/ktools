@@ -74,19 +74,8 @@
             "Remove-NetFirewallRule -DisplayName 'YakitVi' -ErrorAction SilentlyContinue"
         ]
     },
-    "persist": [
-        "yakit-projects",
-        "plugins",
-        "config"
-    ],
-    "shortcuts": [
-        [
-            "Yakit.exe",
-            "Yakit",
-            "",
-            "应用安全测试平台"
-        ]
-    ],
+    "persist": ["yakit-projects", "plugins", "config"],
+    "shortcuts": [["Yakit.exe", "Yakit", "", "应用安全测试平台"]],
     "checkver": {
         "github": "https://github.com/yaklang/yakit",
         "regex": "releases/tag/v([\\d.]+)"

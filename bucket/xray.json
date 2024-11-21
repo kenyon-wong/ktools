@@ -45,10 +45,7 @@
         "}"
     ],
     "bin": "xray.exe",
-    "persist": [
-        "ca.crt",
-        "ca.key"
-    ],
+    "persist": ["ca.crt", "ca.key"],
     "checkver": {
         "github": "https://github.com/chaitin/xray",
         "regex": "download/([\\d.]+)/"

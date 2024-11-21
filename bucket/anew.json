@@ -15,12 +15,7 @@
         }
     },
     "bin": "anew.exe",
-    "shortcuts": [
-        [
-            "anew.exe",
-            "Anew"
-        ]
-    ],
+    "shortcuts": [["anew.exe", "Anew"]],
     "checkver": {
         "github": "https://github.com/tomnomnom/anew",
         "regex": "tag/v([\\d.]+)"

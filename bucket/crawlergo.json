@@ -25,12 +25,7 @@
         "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
         "}"
     ],
-    "bin": [
-        [
-            "crawlergo_win_amd64.exe",
-            "crawlergo"
-        ]
-    ],
+    "bin": [["crawlergo_win_amd64.exe", "crawlergo"]],
     "persist": "config",
     "checkver": {
         "github": "https://github.com/Qianlitp/crawlergo",

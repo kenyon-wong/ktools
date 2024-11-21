@@ -25,14 +25,7 @@
             "hash": "7d13fc667b3b8cf67281cb08c7d75af99eb29f857c71170c6bfad1318708560a"
         }
     },
-    "shortcuts": [
-        [
-            "suo5-gui-windows.exe",
-            "Suo5",
-            "",
-            "suo5-gui-windows.exe"
-        ]
-    ],
+    "shortcuts": [["suo5-gui-windows.exe", "Suo5", "", "suo5-gui-windows.exe"]],
     "checkver": {
         "github": "https://github.com/zema1/suo5",
         "regex": "v([\\d.]+)"

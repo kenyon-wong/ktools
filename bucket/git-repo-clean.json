@@ -18,12 +18,7 @@
     },
     "extract_dir": "releases/1.4.2/Windows-64",
     "bin": "git-repo-clean.exe",
-    "shortcuts": [
-        [
-            "git-repo-clean.exe",
-            "Git Repo Clean"
-        ]
-    ],
+    "shortcuts": [["git-repo-clean.exe", "Git Repo Clean"]],
     "checkver": {
         "url": "https://gitee.com/oschina/git-repo-clean/releases",
         "regex": "/git-repo-clean-([\\d.]+)-Windows-64.zip"

@@ -43,18 +43,8 @@
         "}"
     ],
     "bin": "airfly.exe",
-    "shortcuts": [
-        [
-            "airfly.exe",
-            "AirFly",
-            "",
-            "airfly.exe"
-        ]
-    ],
-    "persist": [
-        "config",
-        "data"
-    ],
+    "shortcuts": [["airfly.exe", "AirFly", "", "airfly.exe"]],
+    "persist": ["config", "data"],
     "checkver": {
         "github": "https://github.com/zgao264/AirFly",
         "regex": "download/([\\d.]+)/"

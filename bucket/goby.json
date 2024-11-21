@@ -29,23 +29,9 @@
         "    }",
         "}"
     ],
-    "bin": [
-        [
-            "Goby.exe",
-            "Goby"
-        ]
-    ],
-    "shortcuts": [
-        [
-            "Goby.exe",
-            "Goby"
-        ]
-    ],
-    "persist": [
-        "data",
-        "config",
-        "extensions"
-    ],
+    "bin": [["Goby.exe", "Goby"]],
+    "shortcuts": [["Goby.exe", "Goby"]],
+    "persist": ["data", "config", "extensions"],
     "checkver": {
         "url": "https://gobysec.net/api/versions",
         "jsonpath": "$.data[0].title"
