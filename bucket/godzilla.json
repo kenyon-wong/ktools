@@ -1,59 +1,59 @@
-{
-    "version": "4.0.1",
-    "description": "Godzilla - 跨平台的网络安全测试工具",
-    "homepage": "https://github.com/BeichenDream/Godzilla",
-    "license": "Proprietary",
-    "notes": [
-        "Godzilla 主要功能：",
-        "- 支持多种网络协议",
-        "- 跨平台兼容性",
-        "- 插件扩展支持",
-        "- 加密通信",
-        "",
-        "使用要求：",
-        "- 需要 Java 运行环境，推荐 JDK 8 或更高版本",
-        "- 运行命令：godzilla",
-        "",
-        "安全警告：",
-        "1. 本工具仅限授权的安全测试使用",
-        "2. 使用者需承担所有法律责任",
-        "3. 请遵守当地法律法规"
-    ],
-    "suggest": {
-        "JDK": [
-            "java/oraclejdk",
-            "java/openjdk"
-        ]
-    },
-    "url": "https://github.com/BeichenDream/Godzilla/releases/download/v4.0.1-godzilla/godzilla.jar",
-    "hash": "62b7eff31d339fd04e6d39aba47b5f37b1b6feb27f85c3c71e4d2d600e8142c6",
-    "pre_install": [
-        "Write-Host 'Creating launcher script...' -ForegroundColor Yellow",
-        "Set-Content \"$dir\\godzilla.bat\" '@echo off\npushd \"%~dp0\"\nstart /b javaw.exe -jar \"%~dp0godzilla.jar\" %*\npopd' -Encoding Ascii",
-        "if (!(Test-Path \"$persist_dir\\data.db\")) {",
-        "    Write-Host 'Initializing database...' -ForegroundColor Yellow",
-        "    New-Item \"$dir\\data.db\" -Type File | Out-Null",
-        "}"
-    ],
-    "bin": "godzilla.bat",
-    "shortcuts": [
-        [
-            "godzilla.bat",
-            "Godzilla",
-            "",
-            "网络安全测试工具"
-        ]
-    ],
-    "persist": [
-        "data.db",
-        "plugins"
-    ],
-    "checkver": {
-        "url": "https://api.github.com/repos/BeichenDream/Godzilla/releases/latest",
-        "jsonpath": "$.tag_name",
-        "regex": "v([\\d.]+)-godzilla"
-    },
-    "autoupdate": {
-        "url": "https://github.com/BeichenDream/Godzilla/releases/download/v$version-godzilla/godzilla.jar"
-    }
-}
+{
+    "version": "4.0.1",
+    "description": "Godzilla - 跨平台的网络安全测试工具",
+    "homepage": "https://github.com/BeichenDream/Godzilla",
+    "license": "Proprietary",
+    "notes": [
+        "Godzilla 主要功能：",
+        "- 支持多种网络协议",
+        "- 跨平台兼容性",
+        "- 插件扩展支持",
+        "- 加密通信",
+        "",
+        "使用要求：",
+        "- 需要 Java 运行环境，推荐 JDK 8 或更高版本",
+        "- 运行命令：godzilla",
+        "",
+        "安全警告：",
+        "1. 本工具仅限授权的安全测试使用",
+        "2. 使用者需承担所有法律责任",
+        "3. 请遵守当地法律法规"
+    ],
+    "suggest": {
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ]
+    },
+    "url": "https://github.com/BeichenDream/Godzilla/releases/download/v4.0.1-godzilla/godzilla.jar",
+    "hash": "62b7eff31d339fd04e6d39aba47b5f37b1b6feb27f85c3c71e4d2d600e8142c6",
+    "pre_install": [
+        "Write-Host 'Creating launcher script...' -ForegroundColor Yellow",
+        "Set-Content \"$dir\\godzilla.bat\" '@echo off\npushd \"%~dp0\"\nstart /b javaw.exe -jar \"%~dp0godzilla.jar\" %*\npopd' -Encoding Ascii",
+        "if (!(Test-Path \"$persist_dir\\data.db\")) {",
+        "    Write-Host 'Initializing database...' -ForegroundColor Yellow",
+        "    New-Item \"$dir\\data.db\" -Type File | Out-Null",
+        "}"
+    ],
+    "bin": "godzilla.bat",
+    "shortcuts": [
+        [
+            "godzilla.bat",
+            "Godzilla",
+            "",
+            "网络安全测试工具"
+        ]
+    ],
+    "persist": [
+        "data.db",
+        "plugins"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/BeichenDream/Godzilla/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\d.]+)-godzilla"
+    },
+    "autoupdate": {
+        "url": "https://github.com/BeichenDream/Godzilla/releases/download/v$version-godzilla/godzilla.jar"
+    }
+}

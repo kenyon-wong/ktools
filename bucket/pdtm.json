@@ -1,40 +1,40 @@
-{
-    "version": "0.0.9",
-    "description": "ProjectDiscovery Tools Manager - A simple manager for ProjectDiscovery's open source security tools",
-    "homepage": "https://projectdiscovery.io",
-    "license": "MIT",
-    "notes": [
-        "Usage:",
-        "- pdtm -h           # Show help",
-        "- pdtm -install     # Install a tool",
-        "- pdtm -update      # Update installed tools",
-        "- pdtm -list        # List available tools"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_amd64.zip",
-            "hash": "6634f584e6da990067ca1faa2840a1b6942a9ca81beaa7d460ba494c7f86555e"
-        },
-        "32bit": {
-            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_386.zip",
-            "hash": "0b26f7fe2f06208bb821663edd070ac6c9453baa88a7d09bb745cd3d41affa6c"
-        }
-    },
-    "bin": "pdtm.exe",
-    "checkver": {
-        "github": "https://github.com/projectdiscovery/pdtm"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_amd64.zip"
-            },
-            "32bit": {
-                "url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_386.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/checksums.txt"
-        }
-    }
-}
+{
+    "version": "0.0.9",
+    "description": "ProjectDiscovery Tools Manager - A simple manager for ProjectDiscovery's open source security tools",
+    "homepage": "https://projectdiscovery.io",
+    "license": "MIT",
+    "notes": [
+        "Usage:",
+        "- pdtm -h           # Show help",
+        "- pdtm -install     # Install a tool",
+        "- pdtm -update      # Update installed tools",
+        "- pdtm -list        # List available tools"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_amd64.zip",
+            "hash": "6634f584e6da990067ca1faa2840a1b6942a9ca81beaa7d460ba494c7f86555e"
+        },
+        "32bit": {
+            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.0.9/pdtm_0.0.9_windows_386.zip",
+            "hash": "0b26f7fe2f06208bb821663edd070ac6c9453baa88a7d09bb745cd3d41affa6c"
+        }
+    },
+    "bin": "pdtm.exe",
+    "checkver": {
+        "github": "https://github.com/projectdiscovery/pdtm"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/projectdiscovery/pdtm/releases/download/v$version/pdtm_$version_windows_386.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}

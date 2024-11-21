@@ -1,58 +1,58 @@
-{
-    "version": "1.9.5.0",
-    "description": "PixPin - 功能强大的截图、贴图和图片管理工具",
-    "homepage": "https://pixpinapp.com/",
-    "license": "Freeware",
-    "notes": [
-        "快捷键:",
-        "- Win+Shift+P: 截图",
-        "- Win+Shift+O: 贴图",
-        "- Win+Shift+H: 历史记录"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://download.pixpinapp.com/PixPin_1.9.5.0.exe",
-            "hash": "ab8bb59cd871f2bc9422b9a8ea1f5c2055800c3b010dac23ad18984c93d736c3"
-        }
-    },
-    "innosetup": true,
-    "bin": "PixPin.exe",
-    "shortcuts": [
-        [
-            "PixPin.exe",
-            "PixPin",
-            "",
-            "PixPin.exe"
-        ]
-    ],
-    "post_install": [
-        "if (!(Test-Path \"$dir\\Config\")) { New-Item \"$dir\\Config\" -Type Directory | Out-Null }",
-        "if (!(Test-Path \"$dir\\Config\\config.json\")) {",
-        "    $config = @{",
-        "        'System.Update.AutoCheckUpdate' = @{",
-        "            'subConf' = @{",
-        "                'checkBeta' = $false",
-        "            }",
-        "            'value' = $false",
-        "        }",
-        "    }",
-        "    $config | ConvertTo-Json -Depth 10 | Set-Content -Path \"$dir\\Config\\config.json\" -Encoding UTF8",
-        "}"
-    ],
-    "persist": [
-        "History",
-        "Data",
-        "Config"
-    ],
-    "checkver": {
-        "url": "https://pixpinapp.com/",
-        "regex": "PixPin_([\\d.]+)\\.exe"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://download.pixpinapp.com/PixPin_$version.exe"
-            }
-        }
-    }
-}
+{
+    "version": "1.9.5.0",
+    "description": "PixPin - 功能强大的截图、贴图和图片管理工具",
+    "homepage": "https://pixpinapp.com/",
+    "license": "Freeware",
+    "notes": [
+        "快捷键:",
+        "- Win+Shift+P: 截图",
+        "- Win+Shift+O: 贴图",
+        "- Win+Shift+H: 历史记录"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://download.pixpinapp.com/PixPin_1.9.5.0.exe",
+            "hash": "ab8bb59cd871f2bc9422b9a8ea1f5c2055800c3b010dac23ad18984c93d736c3"
+        }
+    },
+    "innosetup": true,
+    "bin": "PixPin.exe",
+    "shortcuts": [
+        [
+            "PixPin.exe",
+            "PixPin",
+            "",
+            "PixPin.exe"
+        ]
+    ],
+    "post_install": [
+        "if (!(Test-Path \"$dir\\Config\")) { New-Item \"$dir\\Config\" -Type Directory | Out-Null }",
+        "if (!(Test-Path \"$dir\\Config\\config.json\")) {",
+        "    $config = @{",
+        "        'System.Update.AutoCheckUpdate' = @{",
+        "            'subConf' = @{",
+        "                'checkBeta' = $false",
+        "            }",
+        "            'value' = $false",
+        "        }",
+        "    }",
+        "    $config | ConvertTo-Json -Depth 10 | Set-Content -Path \"$dir\\Config\\config.json\" -Encoding UTF8",
+        "}"
+    ],
+    "persist": [
+        "History",
+        "Data",
+        "Config"
+    ],
+    "checkver": {
+        "url": "https://pixpinapp.com/",
+        "regex": "PixPin_([\\d.]+)\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.pixpinapp.com/PixPin_$version.exe"
+            }
+        }
+    }
+}

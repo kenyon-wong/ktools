@@ -1,49 +1,49 @@
-{
-    "version": "2.1.0",
-    "description": "FFUF - 一款高速 Web Fuzzing 工具",
-    "homepage": "https://github.com/ffuf/ffuf",
-    "license": "MIT",
-    "notes": [
-        "FFUF (Fuzz Faster U Fool) 是一款高性能的 Web Fuzzing 工具：",
-        "- 支持多种 Fuzzing 模式",
-        "- 可配置过滤规则",
-        "- 支持多线程",
-        "- 可自定义请求头和认证",
-        "",
-        "基础用法示例：",
-        "ffuf -w wordlist.txt -u https://example.com/FUZZ",
-        "",
-        "详细文档：https://github.com/ffuf/ffuf#usage"
-    ],
-    "architecture": {
-        "32bit": {
-            "url": "https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_windows_386.zip",
-            "hash": "2a32d60f3bd7092d1d551671152083cbb67b90fa4e5accb6e9fe3f04508e516b"
-        },
-        "64bit": {
-            "url": "https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_windows_amd64.zip",
-            "hash": "c0aec0289f1963cfc38a204f9ebe97712441c670fa7d7aad145cf87b15f038d4"
-        }
-    },
-    "bin": "ffuf.exe",
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\config\")) {",
-        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
-        "}"
-    ],
-    "persist": "config",
-    "checkver": {
-        "github": "https://github.com/ffuf/ffuf",
-        "regex": "releases/tag/v([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://github.com/ffuf/ffuf/releases/download/v$version/ffuf_$version_windows_386.zip"
-            },
-            "64bit": {
-                "url": "https://github.com/ffuf/ffuf/releases/download/v$version/ffuf_$version_windows_amd64.zip"
-            }
-        }
-    }
-}
+{
+    "version": "2.1.0",
+    "description": "FFUF - 一款高速 Web Fuzzing 工具",
+    "homepage": "https://github.com/ffuf/ffuf",
+    "license": "MIT",
+    "notes": [
+        "FFUF (Fuzz Faster U Fool) 是一款高性能的 Web Fuzzing 工具：",
+        "- 支持多种 Fuzzing 模式",
+        "- 可配置过滤规则",
+        "- 支持多线程",
+        "- 可自定义请求头和认证",
+        "",
+        "基础用法示例：",
+        "ffuf -w wordlist.txt -u https://example.com/FUZZ",
+        "",
+        "详细文档：https://github.com/ffuf/ffuf#usage"
+    ],
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_windows_386.zip",
+            "hash": "2a32d60f3bd7092d1d551671152083cbb67b90fa4e5accb6e9fe3f04508e516b"
+        },
+        "64bit": {
+            "url": "https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_windows_amd64.zip",
+            "hash": "c0aec0289f1963cfc38a204f9ebe97712441c670fa7d7aad145cf87b15f038d4"
+        }
+    },
+    "bin": "ffuf.exe",
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "persist": "config",
+    "checkver": {
+        "github": "https://github.com/ffuf/ffuf",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/ffuf/ffuf/releases/download/v$version/ffuf_$version_windows_386.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/ffuf/ffuf/releases/download/v$version/ffuf_$version_windows_amd64.zip"
+            }
+        }
+    }
+}

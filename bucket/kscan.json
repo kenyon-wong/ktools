@@ -1,70 +1,70 @@
-{
-    "version": "1.85",
-    "description": "Kscan - 全方位网络资产扫描工具",
-    "homepage": "https://github.com/lcvvvv/kscan",
-    "license": "GPL-3.0",
-    "notes": [
-        "Kscan 主要功能：",
-        "- 端口扫描",
-        "- 协议检测（支持1200+协议）",
-        "- 指纹识别（10000+协议指纹，2000+应用指纹）",
-        "- 暴力破解（支持10+协议）",
-        "",
-        "基础用法：",
-        "kscan -t target",
-        "kscan -t target -p port",
-        "kscan -t target -p port --br user.txt pass.txt",
-        "",
-        "详细文档：https://github.com/lcvvvv/kscan#readme",
-        "",
-        "安全提示：",
-        "1. 请勿对未授权目标进行扫描",
-        "2. 遵守当地法律法规",
-        "3. 建议仅用于授权的安全测试"
-    ],
-    "architecture": {
-        "32bit": {
-            "url": "https://github.com/lcvvvv/kscan/releases/download/v1.85/kscan_windows_386.zip",
-            "hash": "f1da285f5663e281c0d98e9f75f7ad24183159e660f58ae9f94ba59b607a1361",
-            "bin": [
-                [
-                    "kscan_windows_386.exe",
-                    "kscan"
-                ]
-            ]
-        },
-        "64bit": {
-            "url": "https://github.com/lcvvvv/kscan/releases/download/v1.85/kscan_windows_amd64.zip",
-            "hash": "c9c8ff59fa274f4738b38a14716a522caddc697eaa1a0b8d862cbf0b40a7e3bc",
-            "bin": [
-                [
-                    "kscan_windows_amd64.exe",
-                    "kscan"
-                ]
-            ]
-        }
-    },
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\config\")) {",
-        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
-        "}"
-    ],
-    "persist": [
-        "config",
-        "logs"
-    ],
-    "checkver": {
-        "github": "https://github.com/lcvvvv/kscan",
-        "regex": "releases/tag/v([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://github.com/lcvvvv/kscan/releases/download/v$version/kscan_windows_386.zip"
-            },
-            "64bit": {
-                "url": "https://github.com/lcvvvv/kscan/releases/download/v$version/kscan_windows_amd64.zip"
-            }
-        }
-    }
-}
+{
+    "version": "1.85",
+    "description": "Kscan - 全方位网络资产扫描工具",
+    "homepage": "https://github.com/lcvvvv/kscan",
+    "license": "GPL-3.0",
+    "notes": [
+        "Kscan 主要功能：",
+        "- 端口扫描",
+        "- 协议检测（支持1200+协议）",
+        "- 指纹识别（10000+协议指纹，2000+应用指纹）",
+        "- 暴力破解（支持10+协议）",
+        "",
+        "基础用法：",
+        "kscan -t target",
+        "kscan -t target -p port",
+        "kscan -t target -p port --br user.txt pass.txt",
+        "",
+        "详细文档：https://github.com/lcvvvv/kscan#readme",
+        "",
+        "安全提示：",
+        "1. 请勿对未授权目标进行扫描",
+        "2. 遵守当地法律法规",
+        "3. 建议仅用于授权的安全测试"
+    ],
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/lcvvvv/kscan/releases/download/v1.85/kscan_windows_386.zip",
+            "hash": "f1da285f5663e281c0d98e9f75f7ad24183159e660f58ae9f94ba59b607a1361",
+            "bin": [
+                [
+                    "kscan_windows_386.exe",
+                    "kscan"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://github.com/lcvvvv/kscan/releases/download/v1.85/kscan_windows_amd64.zip",
+            "hash": "c9c8ff59fa274f4738b38a14716a522caddc697eaa1a0b8d862cbf0b40a7e3bc",
+            "bin": [
+                [
+                    "kscan_windows_amd64.exe",
+                    "kscan"
+                ]
+            ]
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "persist": [
+        "config",
+        "logs"
+    ],
+    "checkver": {
+        "github": "https://github.com/lcvvvv/kscan",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/lcvvvv/kscan/releases/download/v$version/kscan_windows_386.zip"
+            },
+            "64bit": {
+                "url": "https://github.com/lcvvvv/kscan/releases/download/v$version/kscan_windows_amd64.zip"
+            }
+        }
+    }
+}

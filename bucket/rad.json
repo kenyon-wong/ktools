@@ -1,45 +1,45 @@
-{
-    "version": "1.0",
-    "description": "RAD - 长亭科技开发的一款专为安全扫描定制的浏览器爬虫",
-    "homepage": "https://github.com/chaitin/rad",
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://github.com/chaitin/rad/blob/master/Disclaimer.md"
-    },
-    "notes": [
-        "Usage:",
-        "rad -t http://example.com      # 爬取目标网站",
-        "rad -t http://example.com -wait-login 10     # 等待10秒后开始爬取",
-        "rad -t http://example.com -http-proxy 127.0.0.1:7777    # 设置HTTP代理",
-        "",
-        "For more information, please visit: https://github.com/chaitin/rad#readme"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/chaitin/rad/releases/download/1.0/rad_windows_amd64.zip",
-            "hash": "c81ec0f799c55d105212f5eda9af7d2cafc392e1024130941f49c8bf84e8ca5e"
-        },
-        "32bit": {
-            "url": "https://github.com/chaitin/rad/releases/download/1.0/rad_windows_386.zip",
-            "hash": "0f073472adadd04771878b9c3514bb756e048bfc7d64de2e7f5b63de68924583"
-        }
-    },
-    "pre_install": [
-        "Get-ChildItem \"$dir\\rad_windows_*.exe\" | Rename-Item -NewName 'rad.exe'"
-    ],
-    "bin": "rad.exe",
-    "checkver": {
-        "github": "https://github.com/chaitin/rad",
-        "regex": "download/([\\d.]+)/"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/chaitin/rad/releases/download/$version/rad_windows_amd64.zip"
-            },
-            "32bit": {
-                "url": "https://github.com/chaitin/rad/releases/download/$version/rad_windows_386.zip"
-            }
-        }
-    }
-}
+{
+    "version": "1.0",
+    "description": "RAD - 长亭科技开发的一款专为安全扫描定制的浏览器爬虫",
+    "homepage": "https://github.com/chaitin/rad",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/chaitin/rad/blob/master/Disclaimer.md"
+    },
+    "notes": [
+        "Usage:",
+        "rad -t http://example.com      # 爬取目标网站",
+        "rad -t http://example.com -wait-login 10     # 等待10秒后开始爬取",
+        "rad -t http://example.com -http-proxy 127.0.0.1:7777    # 设置HTTP代理",
+        "",
+        "For more information, please visit: https://github.com/chaitin/rad#readme"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/chaitin/rad/releases/download/1.0/rad_windows_amd64.zip",
+            "hash": "c81ec0f799c55d105212f5eda9af7d2cafc392e1024130941f49c8bf84e8ca5e"
+        },
+        "32bit": {
+            "url": "https://github.com/chaitin/rad/releases/download/1.0/rad_windows_386.zip",
+            "hash": "0f073472adadd04771878b9c3514bb756e048bfc7d64de2e7f5b63de68924583"
+        }
+    },
+    "pre_install": [
+        "Get-ChildItem \"$dir\\rad_windows_*.exe\" | Rename-Item -NewName 'rad.exe'"
+    ],
+    "bin": "rad.exe",
+    "checkver": {
+        "github": "https://github.com/chaitin/rad",
+        "regex": "download/([\\d.]+)/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/chaitin/rad/releases/download/$version/rad_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/chaitin/rad/releases/download/$version/rad_windows_386.zip"
+            }
+        }
+    }
+}

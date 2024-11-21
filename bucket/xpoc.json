@@ -1,54 +1,54 @@
-{
-    "version": "0.1.0",
-    "description": "XPOC - 长亭科技开发的供应链漏洞快速扫描与应急响应工具",
-    "homepage": "https://github.com/chaitin/xpoc",
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://github.com/chaitin/xpoc/blob/main/LICENSE.md"
-    },
-    "notes": [
-        "基本用法:",
-        "xpoc -h                     # 显示帮助信息",
-        "xpoc scan -t example.com    # 扫描单个目标",
-        "xpoc scan -f targets.txt    # 批量扫描目标",
-        "",
-        "扫描选项:",
-        "-p, --poc string     指定POC文件或目录",
-        "-t, --target string  指定目标",
-        "-f, --file string   从文件读取目标",
-        "-c, --concurrent int 并发数 (默认 20)",
-        "--timeout int        超时时间 (默认 10s)",
-        "",
-        "输出选项:",
-        "--json              输出JSON格式结果",
-        "--html             生成HTML报告",
-        "",
-        "For detailed documentation: https://github.com/chaitin/xpoc#readme"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/chaitin/xpoc/releases/download/0.1.0/xpoc_windows_amd64.zip",
-            "hash": "06d06ffc1e46fbeff5f4053a04b1b16468d5808b81ecfcd98c15f7e767b32da6"
-        }
-    },
-    "bin": [
-        [
-            "xpoc_windows_amd64.exe",
-            "xpoc"
-        ]
-    ],
-    "checkver": {
-        "github": "https://github.com/chaitin/xpoc",
-        "regex": "download/([\\d.]+)/"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/chaitin/xpoc/releases/download/$version/xpoc_windows_amd64.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/checksums.txt"
-        }
-    }
-}
+{
+    "version": "0.1.0",
+    "description": "XPOC - 长亭科技开发的供应链漏洞快速扫描与应急响应工具",
+    "homepage": "https://github.com/chaitin/xpoc",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/chaitin/xpoc/blob/main/LICENSE.md"
+    },
+    "notes": [
+        "基本用法:",
+        "xpoc -h                     # 显示帮助信息",
+        "xpoc scan -t example.com    # 扫描单个目标",
+        "xpoc scan -f targets.txt    # 批量扫描目标",
+        "",
+        "扫描选项:",
+        "-p, --poc string     指定POC文件或目录",
+        "-t, --target string  指定目标",
+        "-f, --file string   从文件读取目标",
+        "-c, --concurrent int 并发数 (默认 20)",
+        "--timeout int        超时时间 (默认 10s)",
+        "",
+        "输出选项:",
+        "--json              输出JSON格式结果",
+        "--html             生成HTML报告",
+        "",
+        "For detailed documentation: https://github.com/chaitin/xpoc#readme"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/chaitin/xpoc/releases/download/0.1.0/xpoc_windows_amd64.zip",
+            "hash": "06d06ffc1e46fbeff5f4053a04b1b16468d5808b81ecfcd98c15f7e767b32da6"
+        }
+    },
+    "bin": [
+        [
+            "xpoc_windows_amd64.exe",
+            "xpoc"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/chaitin/xpoc",
+        "regex": "download/([\\d.]+)/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/chaitin/xpoc/releases/download/$version/xpoc_windows_amd64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/checksums.txt"
+        }
+    }
+}
