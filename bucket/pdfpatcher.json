@@ -1,55 +1,55 @@
 {
-	"version": "1.0.4",
-	"description": "PDF补丁丁 - 功能强大的 PDF 工具箱",
-	"homepage": "https://github.com/wmjordan/PDFPatcher",
-	"license": {
-		"identifier": "Freeware",
-		"url": "https://github.com/wmjordan/PDFPatcher?tab=readme-ov-file#授权协议"
-	},
-	"notes": [
-		"PDF补丁丁主要功能：",
-		"- 编辑和导入书签",
-		"- 剪裁旋转页面",
-		"- 解除文档限制",
-		"- 提取或合并文档",
-		"- 探查文档结构",
-		"- 提取图片",
-		"- PDF转图片",
-		"- OCR文字识别",
-		"",
-		"系统要求：",
-		"- Windows 7 SP1 或更高版本",
-		"- .NET Desktop Runtime 6.0 或更高版本",
-		"",
-		"使用教程：https://www.cnblogs.com/pdfpatcher/p/pdfpatcher-manual.html",
-		"",
-		"注意：首次运行可能需要安装 .NET Runtime"
-	],
-	"suggest": {
-		".NET Runtime": ["main/dotnet-runtime", "main/dotnet-sdk"]
-	},
-	"architecture": {
-		"64bit": {
-			"url": "https://github.com/wmjordan/PDFPatcher/releases/download/v1.0.4/PDFPatcher.1.0.4.4514.7z",
-			"hash": "01F6F03CB37FE1FE50BE4064F1E941C4B733EA153F7BC53EDB225FE7F96557F1"
-		}
-	},
-	"pre_install": [
-		"if (!(Test-Path \"$persist_dir\\config\")) {",
-		"    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
-		"}"
-	],
-	"shortcuts": [["PDFPatcher.exe", "PDF补丁丁", ""]],
-	"persist": ["config", "书签范本"],
-	"checkver": {
-		"github": "https://github.com/wmjordan/PDFPatcher",
-		"regex": "releases/tag/v([\\d.]+)"
-	},
-	"autoupdate": {
-		"architecture": {
-			"64bit": {
-				"url": "https://github.com/wmjordan/PDFPatcher/releases/download/v$version/PDFPatcher.$version.4220.7z"
-			}
-		}
-	}
+    "version": "1.0.4",
+    "description": "PDF补丁丁 - 功能强大的 PDF 工具箱",
+    "homepage": "https://github.com/wmjordan/PDFPatcher",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/wmjordan/PDFPatcher?tab=readme-ov-file#授权协议"
+    },
+    "notes": [
+        "PDF补丁丁主要功能：",
+        "- 编辑和导入书签",
+        "- 剪裁旋转页面",
+        "- 解除文档限制",
+        "- 提取或合并文档",
+        "- 探查文档结构",
+        "- 提取图片",
+        "- PDF转图片",
+        "- OCR文字识别",
+        "",
+        "系统要求：",
+        "- Windows 7 SP1 或更高版本",
+        "- .NET Desktop Runtime 6.0 或更高版本",
+        "",
+        "使用教程：https://www.cnblogs.com/pdfpatcher/p/pdfpatcher-manual.html",
+        "",
+        "注意：首次运行可能需要安装 .NET Runtime"
+    ],
+    "suggest": {
+        ".NET Runtime": ["main/dotnet-runtime", "main/dotnet-sdk"]
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wmjordan/PDFPatcher/releases/download/v1.0.4/PDFPatcher.1.0.4.4514.7z",
+            "hash": "01F6F03CB37FE1FE50BE4064F1E941C4B733EA153F7BC53EDB225FE7F96557F1"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "shortcuts": [["PDFPatcher.exe", "PDF补丁丁", ""]],
+    "persist": ["config", "书签范本"],
+    "checkver": {
+        "github": "https://github.com/wmjordan/PDFPatcher",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wmjordan/PDFPatcher/releases/download/v$version/PDFPatcher.$version.4220.7z"
+            }
+        }
+    }
 }
