@@ -1,7 +1,7 @@
 {
     "version": "4.0.7",
     "description": "冰蝎 - 动态二进制加密的网站管理客户端",
-    "homepage": "https://github.com/rebeyond/Behinder", 
+    "homepage": "https://github.com/rebeyond/Behinder",
     "license": "Freeware",
     "notes": "Java Runtime Environment (JRE) or Java Development Kit (JDK) is required to run this application.",
     "suggest": {

@@ -1,56 +1,56 @@
 {
-	"version": "1.9.9",
-	"description": "KSubdomain - 高性能子域名枚举扫描工具",
-	"homepage": "https://github.com/boy-hack/ksubdomain",
-	"license": "MIT",
-	"notes": [
-		"KSubdomain 特点：",
-		"- 异步 DNS 数据包发送",
-		"- 使用 pcap 技术",
-		"- 每秒可扫描160万个子域名",
-		"- 支持多种扫描模式",
-		"",
-		"基础用法：",
-		"ksubdomain -d domain.com",
-		"ksubdomain -d domain.com -o result.txt",
-		"ksubdomain -f domains.txt -o result.txt",
-		"",
-		"高级用法：",
-		"ksubdomain -d domain.com -b 5000 -l 1",
-		"ksubdomain -d domain.com --skip-wild",
-		"",
-		"文档：https://github.com/boy-hack/ksubdomain#readme",
-		"",
-		"注意：",
-		"1. 需要管理员权限运行",
-		"2. 仅用于授权的安全测试",
-		"3. 建议限制扫描速率避免影响目标系统"
-	],
-	"architecture": {
-		"64bit": {
-			"url": "https://github.com/boy-hack/ksubdomain/releases/download/v1.9.9/KSubdomain-windows.tar",
-			"hash": "18ad7ca239c513f7865e4e46d14b9bad510b12b6d7b5cb070d0d6b15db9c34bc"
-		}
-	},
-	"pre_install": [
-		"if (!(Test-Path \"$persist_dir\\config\")) {",
-		"    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
-		"}",
-		"if (!(Test-Path \"$persist_dir\\results\")) {",
-		"    New-Item -Path \"$persist_dir\\results\" -ItemType Directory | Out-Null",
-		"}"
-	],
-	"bin": "ksubdomain.exe",
-	"persist": ["config", "results"],
-	"checkver": {
-		"github": "https://github.com/boy-hack/ksubdomain",
-		"regex": "releases/tag/v([\\d.]+)"
-	},
-	"autoupdate": {
-		"architecture": {
-			"64bit": {
-				"url": "https://github.com/boy-hack/ksubdomain/releases/download/v$version/KSubdomain-windows.tar"
-			}
-		}
-	}
+    "version": "1.9.9",
+    "description": "KSubdomain - 高性能子域名枚举扫描工具",
+    "homepage": "https://github.com/boy-hack/ksubdomain",
+    "license": "MIT",
+    "notes": [
+        "KSubdomain 特点：",
+        "- 异步 DNS 数据包发送",
+        "- 使用 pcap 技术",
+        "- 每秒可扫描160万个子域名",
+        "- 支持多种扫描模式",
+        "",
+        "基础用法：",
+        "ksubdomain -d domain.com",
+        "ksubdomain -d domain.com -o result.txt",
+        "ksubdomain -f domains.txt -o result.txt",
+        "",
+        "高级用法：",
+        "ksubdomain -d domain.com -b 5000 -l 1",
+        "ksubdomain -d domain.com --skip-wild",
+        "",
+        "文档：https://github.com/boy-hack/ksubdomain#readme",
+        "",
+        "注意：",
+        "1. 需要管理员权限运行",
+        "2. 仅用于授权的安全测试",
+        "3. 建议限制扫描速率避免影响目标系统"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/boy-hack/ksubdomain/releases/download/v1.9.9/KSubdomain-windows.tar",
+            "hash": "18ad7ca239c513f7865e4e46d14b9bad510b12b6d7b5cb070d0d6b15db9c34bc"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+        "}",
+        "if (!(Test-Path \"$persist_dir\\results\")) {",
+        "    New-Item -Path \"$persist_dir\\results\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "bin": "ksubdomain.exe",
+    "persist": ["config", "results"],
+    "checkver": {
+        "github": "https://github.com/boy-hack/ksubdomain",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/boy-hack/ksubdomain/releases/download/v$version/KSubdomain-windows.tar"
+            }
+        }
+    }
 }

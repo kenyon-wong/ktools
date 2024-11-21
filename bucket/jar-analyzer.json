@@ -1,49 +1,49 @@
 {
-	"version": "2.13",
-	"description": "Jar Analyzer - 功能强大的 JAR 包分析工具",
-	"homepage": "https://github.com/4ra1n/jar-analyzer",
-	"license": "Apache-2.0",
-	"notes": [
-		"Jar Analyzer 主要功能：",
-		"- JAR 包批量分析与搜索",
-		"- 方法调用关系分析",
-		"- 字符串搜索",
-		"- Spring 框架分析",
-		"- CFG (Control Flow Graph) 分析",
-		"- JVM Stack Frame 分析",
-		"- Tomcat 远程分析",
-		"- 进阶表达式搜索",
-		"- 自定义 SQL 查询",
-		"- 字节码查看",
-		"- 命令行分析",
-		"- RASP 保护",
-		"",
-		"使用文档：https://github.com/4ra1n/jar-analyzer#readme",
-		"",
-		"注意：需要 Java 运行环境，推荐 JDK 8 或更高版本"
-	],
-	"suggest": {
-		"JDK": ["java/oraclejdk", "java/openjdk"]
-	},
-	"url": "https://jar-analyzer.oss-cn-hangzhou.aliyuncs.com/2.13/jar-analyzer-2.13-windows-full.zip",
-	"hash": "71ccfd94a8143c1f65ede48a97042e206272afafe9c56c65a7f91e4e4bb66640",
-	"extract_dir": "jar-analyzer-2.13-windows-full",
-	"pre_install": [
-		"if (!(Test-Path \"$persist_dir\\config\")) {",
-		"    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
-		"}",
-		"if (!(Test-Path \"$persist_dir\\data\")) {",
-		"    New-Item -Path \"$persist_dir\\data\" -ItemType Directory | Out-Null",
-		"}"
-	],
-	"shortcuts": [["start.exe", "Jar Analyzer", "", "JAR 包分析工具"]],
-	"persist": ["config", "data"],
-	"checkver": {
-		"github": "https://github.com/4ra1n/jar-analyzer",
-		"regex": "releases/tag/([\\d.]+)"
-	},
-	"autoupdate": {
-		"url": "https://jar-analyzer.oss-cn-hangzhou.aliyuncs.com/$version/jar-analyzer-$version-windows-full.zip",
-		"extract_dir": "jar-analyzer-$version-windows-full"
-	}
+    "version": "2.13",
+    "description": "Jar Analyzer - 功能强大的 JAR 包分析工具",
+    "homepage": "https://github.com/4ra1n/jar-analyzer",
+    "license": "Apache-2.0",
+    "notes": [
+        "Jar Analyzer 主要功能：",
+        "- JAR 包批量分析与搜索",
+        "- 方法调用关系分析",
+        "- 字符串搜索",
+        "- Spring 框架分析",
+        "- CFG (Control Flow Graph) 分析",
+        "- JVM Stack Frame 分析",
+        "- Tomcat 远程分析",
+        "- 进阶表达式搜索",
+        "- 自定义 SQL 查询",
+        "- 字节码查看",
+        "- 命令行分析",
+        "- RASP 保护",
+        "",
+        "使用文档：https://github.com/4ra1n/jar-analyzer#readme",
+        "",
+        "注意：需要 Java 运行环境，推荐 JDK 8 或更高版本"
+    ],
+    "suggest": {
+        "JDK": ["java/oraclejdk", "java/openjdk"]
+    },
+    "url": "https://jar-analyzer.oss-cn-hangzhou.aliyuncs.com/2.13/jar-analyzer-2.13-windows-full.zip",
+    "hash": "71ccfd94a8143c1f65ede48a97042e206272afafe9c56c65a7f91e4e4bb66640",
+    "extract_dir": "jar-analyzer-2.13-windows-full",
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    New-Item -Path \"$persist_dir\\config\" -ItemType Directory | Out-Null",
+        "}",
+        "if (!(Test-Path \"$persist_dir\\data\")) {",
+        "    New-Item -Path \"$persist_dir\\data\" -ItemType Directory | Out-Null",
+        "}"
+    ],
+    "shortcuts": [["start.exe", "Jar Analyzer", "", "JAR 包分析工具"]],
+    "persist": ["config", "data"],
+    "checkver": {
+        "github": "https://github.com/4ra1n/jar-analyzer",
+        "regex": "releases/tag/([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://jar-analyzer.oss-cn-hangzhou.aliyuncs.com/$version/jar-analyzer-$version-windows-full.zip",
+        "extract_dir": "jar-analyzer-$version-windows-full"
+    }
 }
