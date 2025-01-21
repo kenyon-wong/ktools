@@ -27,8 +27,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yaklang/yakit/releases/download/v1.4.0-0117-ce/Yakit-1.4.0-0117-windows-amd64.exe#/dl.7z",
-            "hash": "d1e8b3d7c0f0e7a0b4f3c8d5e0b6a8c7f2d9e1b3a7c5d4e9f0a2b1c6d8e7f3"
+            "url": "https://github.com/yaklang/yakit/releases/download/v1.4.0-0117-ce/Yakit-1.4.0-0117-windows-amd64.exe#/Yakit.exe",
+            "hash": "d95a6279748704e90f64f49c18025bd57bc0d4dab90917c24278386e0d763256"
         }
     },
     "pre_install": [
