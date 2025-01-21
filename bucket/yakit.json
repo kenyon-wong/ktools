@@ -23,7 +23,7 @@
         "$wsShell = New-Object -ComObject WScript.Shell",
         "$shortcut = $wsShell.CreateShortcut([System.IO.Path]::Combine($env:USERPROFILE, 'Desktop', 'Yakit.lnk'))",
         "$shortcut.TargetPath = \"powershell.exe\"",
-        "$shortcut.Arguments = \"-NoProfile -ExecutionPolicy Bypass -Command pushd `\"$dir`\"; .\\Yakit.exe \\%*; popd\"",
+        "$shortcut.Arguments = \"-NoProfile -ExecutionPolicy Bypass -Command pushd `\"$dir`\"; Start-Process -FilePath .\\Yakit.exe -Verb RunAs; popd\"",
         "$shortcut.IconLocation  = \"$dir\\Yakit.exe,0\"",
         "$shortcut.Save()"
     ],
