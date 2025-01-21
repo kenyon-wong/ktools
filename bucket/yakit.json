@@ -27,14 +27,14 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yaklang/yakit/releases/download/v1.4.0-0117-ce/Yakit-1.4.0-0117-windows-amd64.exe#/Yakit.exe",
-            "hash": "d95a6279748704e90f64f49c18025bd57bc0d4dab90917c24278386e0d763256"
+            "url": "https://github.com/yaklang/yakit/releases/download/v1.4.0-0117-ce/Yakit-1.4.0-0117-windows-amd64.exe",
+            "hash": "d95a6279748704e90f64f49c18025bd57bc0d4dab90917c24278386e0d763256",
+            "bin": "Yakit.exe"
         }
     },
     "pre_install": [
-        "Write-Host '正在解压应用程序...' -ForegroundColor Yellow",
-        "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
+        "Write-Host '正在处理安装文件...' -ForegroundColor Yellow",
+        "Get-ChildItem \"$dir\\*\" -Include 'Uninstall*', 'NSIS*' | Remove-Item -Force -Recurse"
     ],
     "post_install": [
         "Write-Host '配置防火墙规则...' -ForegroundColor Yellow",
@@ -43,7 +43,7 @@
         "    Direction = 'Inbound'",
         "    Action = 'Allow'",
         "    Enabled = 'True'",
-        "    Program = \"$original_dir\\yakit.exe\"",
+        "    Program = \"$dir\\Yakit.exe\"",
         "}",
         "if (Get-NetFirewallRule -DisplayName $firewallRule.DisplayName -ErrorAction SilentlyContinue) {",
         "    Set-NetFirewallRule @firewallRule",
@@ -51,20 +51,13 @@
         "    New-NetFirewallRule @firewallRule",
         "}",
         "",
-        "Write-Host '检查 Yak 引擎更新...' -ForegroundColor Yellow",
+        "Write-Host '初始化 Yak 引擎...' -ForegroundColor Yellow",
         "$yakEnginePath = \"$persist_dir\\yakit-projects\\yak-engine\"",
-        "if (-not (Test-Path $yakEnginePath)) { New-Item -Path $yakEnginePath -ItemType Directory -Force | Out-Null }",
+        "if (-not (Test-Path $yakEnginePath)) {",
+        "    New-Item -Path $yakEnginePath -ItemType Directory -Force | Out-Null",
+        "}",
         "$yakPath = \"$yakEnginePath\\yak.exe\"",
-        "$latestVersion = (Invoke-WebRequest 'https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/version.txt').Content.Trim()",
-        "if (Test-Path $yakPath) {",
-        "    $currentVersion = (& $yakPath --version) -replace '^yak.exe version\\s*'",
-        "    if ($currentVersion -ne $latestVersion) {",
-        "        Invoke-WebRequest -Uri \"https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/yak_windows_amd64.exe\" -OutFile $yakPath",
-        "        Write-Host \"Yak 已更新至版本 $latestVersion\" -ForegroundColor Green",
-        "    } else {",
-        "        Write-Host \"Yak 已是最新版本 ($currentVersion)\" -ForegroundColor Green",
-        "    }",
-        "} else {",
+        "if (-not (Test-Path $yakPath)) {",
         "    Invoke-WebRequest -Uri \"https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/yak_windows_amd64.exe\" -OutFile $yakPath",
         "    Write-Host 'Yak 引擎已安装' -ForegroundColor Green",
         "}"
@@ -84,7 +77,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/yaklang/yakit/releases/download/v$version/Yakit-$version-windows-amd64.exe#/dl.7z"
+                "url": "https://github.com/yaklang/yakit/releases/download/v$version/Yakit-$version-windows-amd64.exe"
             }
         }
     }
