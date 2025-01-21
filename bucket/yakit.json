@@ -3,72 +3,19 @@
     "description": "Yakit - 专业的交互式应用安全测试平台",
     "homepage": "https://github.com/yaklang/yakit",
     "license": "AGPL-3.0-or-later",
-    "notes": [
-        "Yakit 主要功能：",
-        "- Web 漏洞扫描",
-        "- 被动扫描",
-        "- 数据包分析",
-        "- Fuzzing 测试",
-        "- 插件开发",
-        "- 漏洞管理",
-        "",
-        "初始配置：",
-        "1. 首次运行会自动添加防火墙规则",
-        "2. 自动更新 Yak 引擎到最新版本",
-        "",
-        "使用文档：",
-        "- https://www.yaklang.io/docs",
-        "- https://github.com/yaklang/yakit/wiki",
-        "",
-        "安全提示：",
-        "1. 请在授权环境下使用",
-        "2. 遵守相关法律法规",
-        "3. 建议在测试环境进行测试"
-    ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/yaklang/yakit/releases/download/v1.4.0-0117-ce/Yakit-1.4.0-0117-windows-amd64.exe",
             "hash": "d95a6279748704e90f64f49c18025bd57bc0d4dab90917c24278386e0d763256",
-            "bin": "Yakit.exe"
+            "innosetup": true
         }
     },
     "pre_install": [
-        "Write-Host '正在处理安装文件...' -ForegroundColor Yellow",
-        "Get-ChildItem \"$dir\\*\" -Include 'Uninstall*', 'NSIS*' | Remove-Item -Force -Recurse"
+        "Write-Host '正在解压应用程序...' -ForegroundColor Yellow",
+        "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+        "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
     ],
-    "post_install": [
-        "Write-Host '配置防火墙规则...' -ForegroundColor Yellow",
-        "$firewallRule = @{",
-        "    DisplayName = 'Yakit'",
-        "    Direction = 'Inbound'",
-        "    Action = 'Allow'",
-        "    Enabled = 'True'",
-        "    Program = \"$dir\\Yakit.exe\"",
-        "}",
-        "if (Get-NetFirewallRule -DisplayName $firewallRule.DisplayName -ErrorAction SilentlyContinue) {",
-        "    Set-NetFirewallRule @firewallRule",
-        "} else {",
-        "    New-NetFirewallRule @firewallRule",
-        "}",
-        "",
-        "Write-Host '初始化 Yak 引擎...' -ForegroundColor Yellow",
-        "$yakEnginePath = \"$persist_dir\\yakit-projects\\yak-engine\"",
-        "if (-not (Test-Path $yakEnginePath)) {",
-        "    New-Item -Path $yakEnginePath -ItemType Directory -Force | Out-Null",
-        "}",
-        "$yakPath = \"$yakEnginePath\\yak.exe\"",
-        "if (-not (Test-Path $yakPath)) {",
-        "    Invoke-WebRequest -Uri \"https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/yak_windows_amd64.exe\" -OutFile $yakPath",
-        "    Write-Host 'Yak 引擎已安装' -ForegroundColor Green",
-        "}"
-    ],
-    "uninstaller": {
-        "script": [
-            "Write-Host '正在移除防火墙规则...' -ForegroundColor Yellow",
-            "Remove-NetFirewallRule -DisplayName 'Yakit' -ErrorAction SilentlyContinue"
-        ]
-    },
-    "persist": ["yakit-projects", "plugins", "config"],
+    "bin": "Yakit.exe",
     "shortcuts": [["Yakit.exe", "Yakit"]],
     "checkver": {
         "github": "https://github.com/yaklang/yakit",
