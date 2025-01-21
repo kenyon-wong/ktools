@@ -1,113 +1,61 @@
 {
-    "##": "Yakit 交互式应用安全测试平台安装配置",
-    "version": "1.4.0-0117-ce",
-    "description": "专业的网络安全测试工具，集成漏洞扫描、流量分析、插件开发等功能",
-    "homepage": "https://yaklang.io/products/yakit",
-    "license": "AGPL-3.0-or-later",
-    "notes": [
-        "主要功能：",
-        "  - Web漏洞扫描与渗透测试",
-        "  - 实时流量分析与MITM代理",
-        "  - Fuzzing测试与漏洞利用开发",
-        "  - 插件商店与自定义脚本开发",
-        "",
-        "使用提示：",
-        "  首次启动时会自动初始化工作目录 (~/yakit-projects)",
-        "  建议在防火墙弹出提示时允许网络访问"
-    ],
+    "version": "1.4.0-0117",
+    "description": "(Scoop bucket by arch3rpro) yakit - 交互式应用安全测试平台-Cyber Security ALL-IN-ONE Platform",
+    "homepage": "https://github.com/yaklang/yakit",
+    "notes": "安装成功后需手动启动并初始化本地引擎^-^",
+    "license": "AGPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yaklang/yakit/releases/download/v1.4.0-0117-ce/Yakit-1.4.0-0117-windows-amd64.exe",
+            "url": "https://yaklang.oss-cn-beijing.aliyuncs.com/yak/1.4.0-0117/Yakit-1.4.0-0117-windows-amd64.exe#/dl.7z",
             "hash": "d95a6279748704e90f64f49c18025bd57bc0d4dab90917c24278386e0d763256",
-            "innosetup": true
-        },
-        "32bit": {
-            "##": "当前版本不提供32位支持",
-            "url": ""
-        },
-        "arm64": {
-            "##": "当前版本不提供ARM64支持",
-            "url": ""
+            "extract_dir": "$PLUGINSDIR"
         }
     },
     "pre_install": [
-        "Write-Host '正在解压应用程序文件...' -ForegroundColor Cyan",
-        "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-        "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Recurse -Force"
+        "if (Get-Process -Name 'Yakit' -ErrorAction SilentlyContinue) { taskkill /f /im Yakit.exe }",
+        "Remove-Item \"$dir\\*\" -Exclude 'app-64.7z' -Force -Recurse",
+        "Expand-7zipArchive \"$dir\\app-64.7z\" \"$dir\" -Removal"
     ],
-    "installer": {
-        "script": [
-            "Write-Host '正在初始化工作目录...' -ForegroundColor Cyan",
-            "if (-not (Test-Path \"$persist_dir\")) {",
-            "    New-Item -Path \"$persist_dir\" -ItemType Directory -Force | Out-Null",
-            "}"
-        ]
-    },
     "post_install": [
-        "Write-Host '配置防火墙规则...' -ForegroundColor Cyan",
-        "$firewallParams = @{",
-        "    DisplayName = 'Yakit Application'",
-        "    Direction   = 'Inbound'",
-        "    Action      = 'Allow'",
-        "    Program     = \"$dir\\Yakit.exe\"",
-        "    Enabled     = 'True'",
-        "}",
-        "if (-not (Get-NetFirewallRule -DisplayName $firewallParams.DisplayName -ErrorAction SilentlyContinue)) {",
-        "    New-NetFirewallRule @firewallParams",
+        "ensure \"$persist_dir\" | Out-Null",
+        "$filesToDelete = Get-ChildItem -Path \"$persist_dir\\yakit-projects\\yak-engine\" -Recurse | Where-Object { $_.Name -match '^yak-v\\d'}",
+        "foreach ($file in $filesToDelete) { Remove-Item $file.FullName -Force;  Write-Host \"deleted yak.exe: $($file.FullName)\"; }",
+        "$wsShell = New-Object -ComObject WScript.Shell",
+        "$shortcut = $wsShell.CreateShortcut([System.IO.Path]::Combine($env:USERPROFILE, 'Desktop', 'Yakit.lnk'))",
+        "$shortcut.TargetPath = \"powershell.exe\"",
+        "$shortcut.Arguments = \"-NoProfile -ExecutionPolicy Bypass -Command pushd `\"$dir`\"; .\\Yakit.exe \\%*; popd\"",
+        "$shortcut.IconLocation  = \"$dir\\Yakit.exe,0\"",
+        "$shortcut.Save()"
+    ],
+    "pre_uninstall": [
+        "$desktopPath = Join-Path $env:USERPROFILE '\\Desktop'",
+        "$shortcutName = 'Yakit.lnk'",
+        "$shortcutPath = Join-Path $desktopPath $shortcutName",
+        "Write-Host ([Environment]::NewLine + 'Checking for desktop shortcut at: ' + $shortcutPath)",
+        "if (Test-Path $shortcutPath) {",
+        "    Write-Host ('Deleting desktop shortcut: ' + $shortcutPath)",
+        "    Remove-Item $shortcutPath -Force",
         "} else {",
-        "    Set-NetFirewallRule @firewallParams",
-        "}",
-        "",
-        "Write-Host '检查 Yak 引擎版本...' -ForegroundColor Cyan",
-        "$yakEnginePath = \"$persist_dir\\yak-engine\"",
-        "$yakPath = \"$yakEnginePath\\yak.exe\"",
-        "$latestVersion = (Invoke-RestMethod 'https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/version.txt').Trim()",
-        "",
-        "if (-not (Test-Path $yakPath)) {",
-        "    New-Item -Path $yakEnginePath -ItemType Directory -Force | Out-Null",
-        "    Invoke-WebRequest 'https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/yak_windows_amd64.exe' -OutFile $yakPath",
-        "    Write-Host \"已安装 Yak 引擎 $latestVersion\" -ForegroundColor Green",
-        "} else {",
-        "    $currentVersion = (& $yakPath --version) -replace '^yak.exe version\\s*'",
-        "    if ($currentVersion -ne $latestVersion) {",
-        "        Invoke-WebRequest 'https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/yak_windows_amd64.exe' -OutFile $yakPath",
-        "        Write-Host \"已更新 Yak 引擎到 $latestVersion\" -ForegroundColor Green",
-        "    } else {",
-        "        Write-Host \"Yak 引擎已是最新版本 ($currentVersion)\" -ForegroundColor Green",
-        "    }",
+        "    Write-Host ('Desktop shortcut not found at: ' + $shortcutPath)",
         "}"
     ],
-    "uninstaller": {
-        "script": [
-            "Write-Host '正在清理防火墙规则...' -ForegroundColor Cyan",
-            "Remove-NetFirewallRule -DisplayName 'Yakit Application' -ErrorAction SilentlyContinue"
-        ]
-    },
     "bin": "Yakit.exe",
-    "env_add_path": [
-        "$dir\\bin",
-        "$persist_dir\\yak-engine"
+    "shortcuts": [
+        [
+            "Yakit.exe",
+            "Yakit"
+        ]
     ],
-    "persist": [
-        "yakit-projects",
-        "plugins",
-        "config",
-        "profiles"
-    ],
+    "persist": "yakit-projects",
     "checkver": {
-        "url": "https://api.github.com/repos/yaklang/yakit/releases/latest",
-        "regex": "tag/v([\\d.-]+-ce)",
-        "reverse": true
+        "url": "https://yaklang.oss-cn-beijing.aliyuncs.com/yak/latest/yakit-version.txt",
+        "regex": "(.*)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/yaklang/yakit/releases/download/v$version/Yakit-$version-windows-amd64.exe"
+                "url": "https://yaklang.oss-cn-beijing.aliyuncs.com/yak/$version/Yakit-$version-windows-amd64.exe#/dl.7z"
             }
-        },
-        "hash": {
-            "url": "$baseurl/SHA256SUMS",
-            "regex": "$sha256\\s+$basename"
         }
     }
 }
