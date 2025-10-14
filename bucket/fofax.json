@@ -34,7 +34,10 @@
         "}"
     ],
     "bin": "fofax.exe",
-    "persist": ["config", "rules"],
+    "persist": [
+        "config",
+        "rules"
+    ],
     "checkver": {
         "github": "https://github.com/xiecat/fofax",
         "regex": "releases/tag/([\\w.]+)"

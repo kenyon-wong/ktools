@@ -30,7 +30,14 @@
         "    New-Item -Path \"$env:APPDATA\\GDA\" -ItemType Directory | Out-Null",
         "}"
     ],
-    "shortcuts": [["GDA4.11.exe", "GDA", "", "Android 应用分析工具"]],
+    "shortcuts": [
+        [
+            "GDA4.11.exe",
+            "GDA",
+            "",
+            "Android 应用分析工具"
+        ]
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/charles2gan/GDA-android-reversing-Tool/releases/latest",
         "jsonpath": "$..browser_download_url",
@@ -39,6 +46,13 @@
     "autoupdate": {
         "url": "https://github.com/charles2gan/GDA-android-reversing-Tool/releases/download/GDA$version/GDA$version.zip",
         "extract_dir": "GDA$version",
-        "shortcuts": [["GDA$version.exe", "GDA", "", "Android 应用分析工具"]]
+        "shortcuts": [
+            [
+                "GDA$version.exe",
+                "GDA",
+                "",
+                "Android 应用分析工具"
+            ]
+        ]
     }
 }

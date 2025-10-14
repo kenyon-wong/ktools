@@ -20,7 +20,10 @@
         "3. 请遵守当地法律法规"
     ],
     "suggest": {
-        "JDK": ["java/oraclejdk", "java/openjdk"]
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ]
     },
     "url": "https://github.com/BeichenDream/Godzilla/releases/download/v4.0.1-godzilla/godzilla.jar",
     "hash": "62b7eff31d339fd04e6d39aba47b5f37b1b6feb27f85c3c71e4d2d600e8142c6",
@@ -33,8 +36,18 @@
         "}"
     ],
     "bin": "godzilla.bat",
-    "shortcuts": [["godzilla.bat", "Godzilla", "", "网络安全测试工具"]],
-    "persist": ["data.db", "plugins"],
+    "shortcuts": [
+        [
+            "godzilla.bat",
+            "Godzilla",
+            "",
+            "网络安全测试工具"
+        ]
+    ],
+    "persist": [
+        "data.db",
+        "plugins"
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/BeichenDream/Godzilla/releases/latest",
         "jsonpath": "$.tag_name",

@@ -1,0 +1,43 @@
+{
+    "version": "1.7.1",
+    "description": "httpx - Fast and multi-purpose HTTP toolkit for running multiple probes",
+    "homepage": "https://github.com/projectdiscovery/httpx",
+    "license": "MIT",
+    "notes": [
+        "Basic usage:",
+        "httpx -u https://example.com                     # Probe single URL",
+        "httpx -l urls.txt                                # Probe multiple URLs",
+        "cat domains.txt | httpx                          # Pipe from stdin",
+        "",
+        "Common options:",
+        "httpx -l urls.txt -title -status-code -tech-detect",
+        "httpx -l urls.txt -mc 200,301,302               # Match status codes",
+        "httpx -l urls.txt -screenshot                    # Take screenshots",
+        "",
+        "Documentation: https://docs.projectdiscovery.io/tools/httpx/overview"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/projectdiscovery/httpx/releases/download/v1.7.1/httpx_1.7.1_windows_amd64.zip",
+            "hash": "4109f15056414f25140c7027092953264944664480dd53f086acb8e07d9fccab"
+        },
+        "32bit": {
+            "url": "https://github.com/projectdiscovery/httpx/releases/download/v1.7.1/httpx_1.7.1_windows_386.zip",
+            "hash": "2e0cc18be1f86ed11e0d82225882c90fbb7a2b07525bc86cb9ab3eb29b6bfaba"
+        }
+    },
+    "bin": "httpx.exe",
+    "checkver": {
+        "github": "https://github.com/projectdiscovery/httpx"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/projectdiscovery/httpx/releases/download/v$version/httpx_$version_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/projectdiscovery/httpx/releases/download/v$version/httpx_$version_windows_386.zip"
+            }
+        }
+    }
+}

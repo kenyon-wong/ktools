@@ -1,0 +1,30 @@
+{
+    "version": "1.1.0",
+    "description": "MassDNS wrapper written in go to enumerate valid subdomains using active bruteforce as well as resolve subdomains with wildcard filtering and easy input-output support.",
+    "homepage": "https://github.com/projectdiscovery/shuffledns",
+    "license": "GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/projectdiscovery/shuffledns/releases/download/v1.1.0/shuffledns_1.1.0_windows_amd64.zip",
+            "hash": "e4ae611dcf130dc9c051a2a068116a6fb3cd3ca1e016a7a5901ec7192cc54aac"
+        },
+        "32bit": {
+            "url": "https://github.com/projectdiscovery/shuffledns/releases/download/v1.1.0/shuffledns_1.1.0_windows_386.zip",
+            "hash": "292d374529a4456c9632c59ea915dd0ae6b15321920a71356edbc71662094e51"
+        }
+    },
+    "bin": "shuffledns.exe",
+    "checkver": {
+        "github": "https://github.com/projectdiscovery/shuffledns"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/projectdiscovery/shuffledns/releases/download/v$version/shuffledns_$version_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/projectdiscovery/shuffledns/releases/download/v$version/shuffledns_$version_windows_386.zip"
+            }
+        }
+    }
+}

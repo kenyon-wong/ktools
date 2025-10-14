@@ -24,7 +24,9 @@
             "hash": "0f073472adadd04771878b9c3514bb756e048bfc7d64de2e7f5b63de68924583"
         }
     },
-    "pre_install": ["Get-ChildItem \"$dir\\rad_windows_*.exe\" | Rename-Item -NewName 'rad.exe'"],
+    "pre_install": [
+        "Get-ChildItem \"$dir\\rad_windows_*.exe\" | Rename-Item -NewName 'rad.exe'"
+    ],
     "bin": "rad.exe",
     "checkver": {
         "github": "https://github.com/chaitin/rad",

@@ -5,7 +5,10 @@
     "license": "Freeware",
     "notes": "Java Runtime Environment (JRE) or Java Development Kit (JDK) is required to run this application.",
     "suggest": {
-        "JDK": ["java/oraclejdk", "java/openjdk"]
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ]
     },
     "url": "https://github.com/rebeyond/Behinder/releases/download/Behinder_v4.0.7/Behinder_v4.07.zip",
     "hash": "d17c676a9525e99917a694024212bfddeb038d278f9017a0aef43fbdd142070b",
@@ -18,7 +21,14 @@
         "$content | Set-Content \"$dir\\behinder.bat\" -Encoding ASCII"
     ],
     "bin": "behinder.bat",
-    "shortcuts": [["behinder.bat", "Behinder", "", "Behinder.jar"]],
+    "shortcuts": [
+        [
+            "behinder.bat",
+            "Behinder",
+            "",
+            "Behinder.jar"
+        ]
+    ],
     "persist": "data.db",
     "checkver": {
         "github": "https://github.com/rebeyond/Behinder",

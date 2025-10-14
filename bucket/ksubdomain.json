@@ -41,7 +41,10 @@
         "}"
     ],
     "bin": "ksubdomain.exe",
-    "persist": ["config", "results"],
+    "persist": [
+        "config",
+        "results"
+    ],
     "checkver": {
         "github": "https://github.com/boy-hack/ksubdomain",
         "regex": "releases/tag/v([\\d.]+)"

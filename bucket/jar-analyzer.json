@@ -23,7 +23,10 @@
         "注意：需要 Java 运行环境，推荐 JDK 8 或更高版本"
     ],
     "suggest": {
-        "JDK": ["java/oraclejdk", "java/openjdk"]
+        "JDK": [
+            "java/oraclejdk",
+            "java/openjdk"
+        ]
     },
     "url": "https://jar-analyzer.oss-cn-hangzhou.aliyuncs.com/2.13/jar-analyzer-2.13-windows-full.zip",
     "hash": "71ccfd94a8143c1f65ede48a97042e206272afafe9c56c65a7f91e4e4bb66640",
@@ -36,8 +39,18 @@
         "    New-Item -Path \"$persist_dir\\data\" -ItemType Directory | Out-Null",
         "}"
     ],
-    "shortcuts": [["start.exe", "Jar Analyzer", "", "JAR 包分析工具"]],
-    "persist": ["config", "data"],
+    "shortcuts": [
+        [
+            "start.exe",
+            "Jar Analyzer",
+            "",
+            "JAR 包分析工具"
+        ]
+    ],
+    "persist": [
+        "config",
+        "data"
+    ],
     "checkver": {
         "github": "https://github.com/4ra1n/jar-analyzer",
         "regex": "releases/tag/([\\d.]+)"
