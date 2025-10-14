@@ -1,4 +1,4 @@
-on:
+﻿on:
   workflow_dispatch:
   schedule:
     # run every 4 hours
@@ -13,5 +13,5 @@ jobs:
       - name: Excavate
         uses: ScoopInstaller/GithubActions@main
         env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_UPDATED: 1
