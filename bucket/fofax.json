@@ -1,5 +1,5 @@
 {
-    "version": "v0.1.47",
+    "version": "v0.1.48",
     "description": "FoFax - 基于 FOFA API 的命令行查询工具",
     "homepage": "https://fofax.xiecat.fun/",
     "license": "GPL-3.0",
@@ -20,12 +20,12 @@
     ],
     "architecture": {
         "32bit": {
-            "url": "https://github.com/xiecat/fofax/releases/download/v0.1.47/fofax_v0.1.47_windows_386.zip",
-            "hash": "f709ad2ab368888d4750f5b505d8a6744b508d3c37a3330e5ebe13c53686b9d5"
+            "url": "https://github.com/xiecat/fofax/releases/download/v0.1.48/fofax_v0.1.48_windows_386.zip",
+            "hash": "1b9472125b006f0995dd89f507258aafdb04b23ebdcee459ed5a302da52aab13"
         },
         "64bit": {
-            "url": "https://github.com/xiecat/fofax/releases/download/v0.1.47/fofax_v0.1.47_windows_amd64.zip",
-            "hash": "378b092fa9c738e1073424a064c59b1d2ec6885db3a6a42bbdd1cdd8df29b850"
+            "url": "https://github.com/xiecat/fofax/releases/download/v0.1.48/fofax_v0.1.48_windows_amd64.zip",
+            "hash": "ff633f79409ff19c2699b73fac0a0ce13f7622cd18ca39618274f5290a2e8748"
         }
     },
     "pre_install": [
