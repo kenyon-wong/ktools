@@ -1,5 +1,5 @@
 {
-    "version": "4.11",
+    "version": "4.12",
     "description": "GDA - 快速强大的 Android 应用程序反编译和分析工具",
     "homepage": "https://github.com/charles2gan/GDA-android-reversing-Tool",
     "license": "Apache-2.0",
@@ -22,9 +22,9 @@
         "",
         "注意：本工具仅用于安全研究和授权测试！"
     ],
-    "url": "https://github.com/charles2gan/GDA-android-reversing-Tool/releases/download/GDA4.11/GDA4.11.zip",
-    "hash": "e11aa63d98b7eda3b57e1924052a2490711c294da19050534d5ba4b15aee55fb",
-    "extract_dir": "GDA4.11",
+    "url": "https://github.com/charles2gan/GDA-android-reversing-Tool/releases/download/GDA4.12/GDA4.12.zip",
+    "hash": "35e31946755c43675bc204f71b746f349bc632dea38f7df2db7a3ecf1af1dcbf",
+    "extract_dir": "GDA4.12",
     "pre_install": [
         "if (!(Test-Path \"$env:APPDATA\\GDA\")) {",
         "    New-Item -Path \"$env:APPDATA\\GDA\" -ItemType Directory | Out-Null",
@@ -32,7 +32,7 @@
     ],
     "shortcuts": [
         [
-            "GDA4.11.exe",
+            "GDA4.12.exe",
             "GDA",
             "",
             "Android 应用分析工具"
