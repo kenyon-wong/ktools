@@ -1,16 +1,16 @@
 {
-    "version": "1.2.2",
+    "version": "1.3.0",
     "description": "The most powerful bruteforcer / password sprayer Artifact ",
     "homepage": "https://github.com/chainreactors/zombie",
     "license": "MIT",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/chainreactors/zombie/releases/download/v1.2.2/zombie_windows_386.exe#/zombie.exe",
-            "hash": "49255892fdfd7a152e1f3805e4fb5b2d3bbe08fa97f94a6886bcb609a3633b97"
+            "url": "https://github.com/chainreactors/zombie/releases/download/v1.3.0/zombie_windows_386.exe#/zombie.exe",
+            "hash": "b406e2b839fec480823ca9c92f0e7e1abde7bb04c16a5488cc88ac229dcb7749"
         },
         "64bit": {
-            "url": "https://github.com/chainreactors/zombie/releases/download/v1.2.2/zombie_windows_amd64.exe#/zombie.exe",
-            "hash": "abf2382f796866a6b4c17d01359c38933c094609209323e0dc2baab158ef04e9"
+            "url": "https://github.com/chainreactors/zombie/releases/download/v1.3.0/zombie_windows_amd64.exe#/zombie.exe",
+            "hash": "fe09aefe6b8386676d7f59c8d14f380e40726ca377c769770d7c942117c10f22"
         }
     },
     "bin": "zombie.exe",
