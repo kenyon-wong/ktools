@@ -1,5 +1,5 @@
 {
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "ProjectDiscovery Tools Manager - A simple manager for ProjectDiscovery's open source security tools",
     "homepage": "https://projectdiscovery.io",
     "license": "MIT",
@@ -12,12 +12,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.1.4/pdtm_0.1.4_windows_amd64.zip",
-            "hash": "301e6cd380a4fabca3bf4b911fde96763b4d5f07da1774a66d3365db22a45701"
+            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.1.5/pdtm_0.1.5_windows_amd64.zip",
+            "hash": "50d931eba9c3fbf5a98e4b3bb12deee7664adfcdc00553da8a985119e0199f09"
         },
         "32bit": {
-            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.1.4/pdtm_0.1.4_windows_386.zip",
-            "hash": "4aa69d8a57b664ddbd424c1bf1c6d8feaa2282952828f28859ede06db026e4e6"
+            "url": "https://github.com/projectdiscovery/pdtm/releases/download/v0.1.5/pdtm_0.1.5_windows_386.zip",
+            "hash": "4aca63938f6ddeae899b29a2cc47ff3cef587bbbd63c995e1c972c91b49a2cc3"
         }
     },
     "bin": "pdtm.exe",
